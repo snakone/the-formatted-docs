@@ -1,0 +1,774 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>formatted-blog documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">formatted-blog documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ConditionsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/conditions/conditions.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-conditions</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./conditions.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./conditions.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#text" >text</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#notification" >notification</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notification"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>notification</b></span>
+                        <a href="#notification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>notification()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/pages/conditions/conditions.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="text"></a>
+                    <span class="name">
+                        <span ><b>text</b></span>
+                        <a href="#text"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>NOTIFICATION_TEXT</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/pages/conditions/conditions.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component } from &#x27;@angular/core&#x27;;
+import { NOTIFICATION_TEXT } from &#x27;@shared/data/sentences&#x27;;
+
+@Component({
+  selector: &#x27;app-conditions&#x27;,
+  templateUrl: &#x27;./conditions.component.html&#x27;,
+  styleUrls: [&#x27;./conditions.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class ConditionsComponent {
+
+  text &#x3D; NOTIFICATION_TEXT;
+  
+  public notification(): void {
+    console.log(&#x27;home&#x27;);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;animated fadeIn&quot;&gt;
+  &lt;section class&#x3D;&quot;conditions-content&quot;&gt;
+    &lt;div class&#x3D;&quot;conditions animated fadeIn&quot;&gt;
+      &lt;b class&#x3D;&quot;start&quot;&gt;Esta política de condiciones de uso es válida a partir de Mayo 2023.&lt;/b&gt;
+      &lt;h1&gt;TÉRMINOS Y CONDICIONES&lt;span&gt; - The Formatted Blog&lt;/span&gt;&lt;/h1&gt;
+      &lt;p&gt;
+        The Formatted Blog, persona jurídica de derecho privado describe, a través de este documento, las normas
+        de uso del sitio &lt;a href&#x3D;&quot;https://formatted-blog.netlify.app&quot; target&#x3D;&quot;_blank&quot;&gt;https://formatted-blog.netlify.app&lt;/a&gt; y de
+        cualquier otro sitio web, tienda o aplicación operada por el titular. Al navegar por este sitio web,
+        consideramos que está de acuerdo con las condiciones de uso que figuran a continuación. Si no está de acuerdo con los 
+        términos de este acuerdo, le pedimos que no haga ningún otro
+        uso de este sitio web, mucho menos que se registre o envíe sus datos personales. Si cambiamos nuestras
+        condiciones de uso, publicaremos el nuevo texto en este sitio web, con una fecha de
+        revisión actualizada. Podemos modificar este documento en cualquier momento. Si hay un cambio
+        significativo en los términos de este acuerdo, podemos informarle utilizando la información de
+        contacto que tenemos en nuestra base de datos o mediante una notificación.
+      &lt;/p&gt;
+      &lt;p&gt;
+        El uso de este sitio web después de los cambios significa que usted acepta las condiciones de uso
+        revisadas. Si, después de leer la versión revisada, no está de acuerdo con sus términos, por favor, termine su acceso.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 1&lt;/span&gt; - Usuario&lt;/h2&gt;
+      &lt;p&gt;
+        El uso de este sitio web le otorga automáticamente la condición de Usuario e implica su plena aceptación
+        de todas las directrices y condiciones incluidas en estas Condiciones.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 2&lt;/span&gt; - Adhesión de la política de privacidad&lt;/h2&gt;
+      &lt;p&gt;
+        El uso de este sitio web implica la adhesión a estas Condiciones de Uso y a la versión más actualizada de
+        la Política de Privacidad de The Formatted Blog.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 3&lt;/span&gt; - Condiciones de acceso&lt;/h2&gt;
+      &lt;p&gt;
+        En general, el acceso al sitio web de The Formatted Blog es gratuito y no requiere registro previo.
+        Sin embargo, para hacer uso de algunas funcionalidades, el usuario puede necesitar registrarse, creando
+        una cuenta de usuario con un nombre de usuario y una contraseña de acceso.
+        Es responsabilidad del usuario proporcionar únicamente información correcta, auténtica, válida, completa y
+        actualizada, así como no revelar su nombre de usuario y contraseña a terceros.
+        Algunas partes de este sitio web ofrecen al usuario la opción de publicar comentarios en determinadas
+        áreas. The Formatted Blog no consiente la publicación de contenidos de carácter discriminatorio, ofensivo
+        o ilícito, o que infrinjan los derechos de autor o cualquier otro derecho de terceros.
+        La publicación de cualquier contenido por parte del usuario de este sitio web, incluidos los mensajes y
+        comentarios, implica una licencia no exclusiva, irrevocable e irreversible para su uso, reproducción y
+        publicación por parte de The Formatted Blog en su sitio web, plataformas de internet y aplicaciones, o
+        incluso en otras plataformas, sin ninguna restricción o limitación.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 4&lt;/span&gt; - Cookies&lt;/h2&gt;
+      &lt;p&gt;
+        La información sobre el uso que usted hace de este sitio web puede recogerse a través de las cookies. Las
+        cookies son piezas de información que se almacenan directamente en el equipo que está utilizando. Las
+        cookies permiten recoger información como el tipo de navegador, el tiempo de permanencia en el sitio web, las
+        páginas visitadas, las preferencias de idioma y otros datos de tráfico anónimos. Nosotros y nuestros proveedores
+        de servicios utilizamos la información para la protección de la seguridad, para facilitar la navegación,
+        mostrar la información de manera más eficiente y personalizar su experiencia al utilizar este sitio web, así como
+        para el seguimiento en línea. También recopilamos información estadística sobre el uso del sitio web para mejorar
+        continuamente nuestro diseño y funcionalidad, para entender cómo se utiliza el sitio web y para ayudarle a
+        resolver problemas relevantes.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Si no desea que se recoja su información a través de las cookies, existe un procedimiento sencillo en la
+        mayoría de los navegadores que permite rechazar automáticamente las cookies, o le da la opción de aceptar o
+        rechazar la transferencia de una cookie específica (o varias) de un sitio web concreto a su ordenador. Sin embargo,
+        esto puede crear inconvenientes en su uso del sitio web.
+        La configuración que elija puede afectar a su experiencia de navegación y al funcionamiento que requiere
+        el uso de cookies. En este sentido, rechazamos cualquier responsabilidad por las consecuencias derivadas del
+        funcionamiento limitado de este sitio web causado por la desactivación de las cookies en su dispositivo
+        (incapacidad para establecer o leer una cookie).
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 5&lt;/span&gt; - Propiedad intelectual&lt;/h2&gt;
+      &lt;p&gt;
+        Todos los elementos de The Formatted Blog son propiedad intelectual de la misma o de sus licenciantes.
+        Estos términos o el uso del sitio web no le otorgan ninguna licencia o derecho de uso de los derechos de
+        propiedad intelectual de The Formatted Blog o de cualquier tercero.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 6&lt;/span&gt; - Enlaces a sitios web de terceros&lt;/h2&gt;
+      &lt;p&gt;
+        Este sitio web puede contener, de vez en cuando, enlaces de hipertexto que le redirigirán a sitios web de
+        nuestros socios, anunciantes, proveedores, etc. Si hace clic en uno de estos enlaces a cualquiera de estos
+        sitios, recuerde que cada sitio tiene sus propias prácticas de privacidad y que nosotros no somos
+        responsables de estas políticas. Por favor, consulte esas políticas antes de enviar cualquier dato personal a esos
+        sitios. No somos responsables de las políticas y prácticas de recopilación, uso y divulgación (incluidas las
+        prácticas de protección de datos) de otras organizaciones, como Facebook, Apple, Google, Microsoft, o cualquier otro
+        desarrollador de software o proveedor de aplicaciones, tienda de medios sociales, sistema operativo,
+        proveedor de servicios de internet o fabricante de dispositivos, incluidos los Datos Personales que usted divulgue a
+        otras organizaciones a través de las aplicaciones, en relación con dichas aplicaciones, o publicados en nuestras
+        redes sociales. Le recomendamos que se informe sobre la política de privacidad y las condiciones de uso de cada
+        sitio web visitado o proveedor de servicios utilizado.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 7&lt;/span&gt; - Plazos y modificaciones&lt;/h2&gt;
+      &lt;p&gt;
+        El funcionamiento de este sitio web es por tiempo indefinido.
+        La totalidad del sitio web o cada una de sus secciones podrá ser cerrada, suspendida o interrumpida
+        unilateralmente por The Formatted Blog, en cualquier momento y sin previo aviso.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección8&lt;/span&gt; - Datos personales&lt;/h2&gt;
+      &lt;p&gt;
+        Durante el uso de este sitio web, ciertos datos personales serán recogidos y procesados por The Formatted
+        Blog
+        y/o los Socios. Las normas relativas al tratamiento de los datos personales de The Formatted Blog están
+        estipuladas en la Política de Privacidad.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;Sección 9&lt;/span&gt; - Contacto&lt;/h2&gt;
+      &lt;p&gt;Si tiene alguna pregunta sobre las condiciones de uso, por favor póngase en contacto con nosotros por
+        correo electrónico &lt;a href&#x3D;&quot;mailto:theformattedblog@gmail.com&quot;&gt;theformattedblog&amp;#64;gmail.com&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;div class&#x3D;&quot;politics animated fadeIn&quot;&gt;
+      &lt;h1&gt;POLÍTICA DE PRIVACIDAD&lt;span&gt; - The Formatted Blog&lt;/span&gt;&lt;/h1&gt;
+      &lt;p&gt;
+        En nuestra plataforma de creación de contenido, entendemos el poder y la creatividad que los usuarios
+        aportan al mundo digital. Sin embargo, también somos conscientes de los desafíos y peligros asociados con
+        la creación de contenido en línea. Esta Política de Privacidad tiene como objetivo garantizar un entorno
+        seguro y responsable para todos los usuarios al utilizar nuestro sitio web.
+        Creemos en la importancia de promover la libertad de expresión y el intercambio de ideas, pero también
+        reconocemos la necesidad de establecer límites y salvaguardias para proteger a nuestros usuarios y a la
+        comunidad en general. Esta política establece las directrices y condiciones que deben seguirse al crear
+        contenido, abordando los riesgos potenciales y los comportamientos inaceptables.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Nuestra plataforma se esfuerza por fomentar la diversidad, el respeto mutuo y la convivencia armoniosa.
+        Por lo tanto, es fundamental que todos los usuarios entiendan y acepten las responsabilidades que conlleva
+        la creación de contenido en nuestra comunidad en línea.
+        Esta política no solo protege a los usuarios, sino también a aquellos que puedan verse afectados por el
+        contenido creado. Nos comprometemos a tomar medidas adecuadas para moderar y eliminar contenido que viole
+        los términos aquí establecidos, así como para investigar y abordar cualquier denuncia o reporte de
+        contenido inapropiado.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Al utilizar nuestro sitio web, usted acepta cumplir con los términos y condiciones de esta Política de
+        Privacidad y se compromete a actuar de manera responsable y respetuosa al crear contenido. Nos esforzamos
+        por proporcionarle una experiencia segura y enriquecedora, donde pueda expresarse libremente sin
+        comprometer la integridad y la seguridad de otros usuarios.
+        Recuerde que la creación de contenido conlleva una gran responsabilidad y tiene el poder de influir en los
+        demás. Le instamos a que utilice nuestro sitio web de manera ética y positiva, evitando cualquier
+        contenido que pueda resultar perjudicial, inapropiado o ilegal.
+        Estamos comprometidos con su privacidad y la protección de sus datos personales. Para obtener más
+        información sobre cómo recopilamos, utilizamos y protegemos sus datos, consulte nuestra Política de
+        Privacidad.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;1.&lt;/span&gt; Responsabilidad del Usuario&lt;/h2&gt;
+      &lt;p&gt;
+        Al crear contenido en nuestro sitio web, usted asume la plena responsabilidad de sus acciones y se
+        compromete a no participar en ninguna actividad que pueda ser ilegal, inapropiada, difamatoria, ofensiva,
+        malintencionada o perjudicial para otros usuarios o terceros. Esto incluye, pero no se limita a:
+      &lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          A) &lt;b&gt;Contenido inadecuado:&lt;/b&gt; No se permite la creación de contenido que sea pornográfico, sexualmente
+          explícito, violento, discriminatorio, racista, xenófobo, o que promueva el odio, la violencia o cualquier forma de abuso.
+        &lt;/li&gt;
+        &lt;li&gt;
+          B) &lt;b&gt;Contenido difamatorio:&lt;/b&gt; No se permite la creación de contenido que difame, calumnie o perjudique
+          la reputación de individuos, organizaciones o entidades.
+        &lt;/li&gt;
+        &lt;li&gt;
+          C) &lt;b&gt;Contenido ilegal:&lt;/b&gt; No se permite la creación de contenido que viole leyes locales, nacionales o
+          internacionales, incluyendo, pero no limitado a, derechos de autor, marcas registradas, patentes, secretos comerciales o
+          derechos de privacidad.
+        &lt;/li&gt;
+        &lt;li&gt;
+          D) &lt;b&gt;Contenido fraudulento:&lt;/b&gt; No se permite la creación de contenido que sea engañoso, fraudulento o que
+          promueva actividades ilegales, como la piratería informática, el fraude financiero o la suplantación de identidad.
+        &lt;/li&gt;
+        &lt;li&gt;
+          E) &lt;b&gt;Contenido perjudicial:&lt;/b&gt; No se permite la creación de contenido que contenga virus, malware u otro tipo
+          de código malicioso que pueda dañar o comprometer la seguridad de nuestro sitio web, usuarios u otros sistemas.
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;2.&lt;/span&gt; Moderación del Contenido&lt;/h2&gt;
+      &lt;p&gt;
+        Nos reservamos el derecho de moderar y eliminar cualquier contenido que consideremos inapropiado, ilegal o
+        que viole los términos de esta política de privacidad. Podemos llevar a cabo dicha moderación de manera automática o
+        mediante revisión manual, y nos esforzaremos por tomar las medidas necesarias para garantizar la integridad y seguridad de nuestro
+        sitio web.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;3.&lt;/span&gt; Protección de la Privacidad&lt;/h2&gt;
+      &lt;p&gt;
+        Entendemos la importancia de proteger su privacidad y los datos personales que comparta en nuestro sitio
+        web. Nos comprometemos a cumplir con todas las leyes y regulaciones aplicables en materia de protección de
+        datos, y a utilizar sus datos personales únicamente con fines legítimos y en concordancia con nuestra Política de Privacidad.
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;4.&lt;/span&gt; Denuncias y Reportes&lt;/h2&gt;
+      &lt;p&gt;
+        Si encuentra contenido que considera inapropiado, ilegal o que viola los términos de esta política de
+        privacidad, le animamos a que nos lo informe de inmediato. Tomaremos las medidas necesarias para investigar y abordar
+        dichas denuncias de manera oportuna y adecuada. &lt;a href&#x3D;&quot;mailto:theformattedblog@gmail.com&quot;&gt;theformattedblog&amp;#64;gmail.com&lt;/a&gt;
+      &lt;/p&gt;
+      &lt;h2&gt;&lt;span class&#x3D;&quot;bold&quot;&gt;5.&lt;/span&gt; Cambios en la Política de Privacidad&lt;/h2&gt;
+      &lt;p&gt;
+        Nos reservamos el derecho de modificar o actualizar esta política de privacidad en cualquier momento y sin
+        previo aviso. Entendemos que la protección de su privacidad es fundamental, por lo que nos comprometemos a
+        informarle sobre cualquier cambio significativo en nuestra política de privacidad. Cuando realicemos modificaciones en esta política, 
+        actualizaremos la fecha de &quot;Última Actualización&quot; al comienzo del documento. Le recomendamos que revise periódicamente esta política para estar al tanto de
+        cualquier cambio. Su uso continuado de nuestro sitio web después de realizar modificaciones constituirá su
+        aceptación de dichos cambios.
+      &lt;/p&gt;
+      &lt;p&gt;
+        En caso de que realicemos cambios sustanciales que afecten sus derechos y la forma en que utilizamos su
+        información personal, le proporcionaremos un aviso destacado en nuestro sitio web o le enviaremos una
+        notificación por correo electrónico, si tenemos su dirección de correo electrónico en nuestros registros.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Le animamos a que revise regularmente esta política de privacidad y a que esté atento a cualquier
+        comunicación nuestra en relación con cambios en la misma. Si continúa utilizando nuestro sitio web después
+        de que se hayan realizado cambios, se considerará que ha aceptado los términos revisados de la política de
+        privacidad. Si no está de acuerdo con los términos de esta política de privacidad o con cualquier modificación futura,
+        le recomendamos que deje de utilizar nuestro sitio web y que elimine su cuenta, si corresponde.
+        Su confianza es importante para nosotros, y nos comprometemos a proteger su privacidad y mantenerlo
+        informado sobre cómo se utilizan sus datos personales. Si tiene alguna pregunta o inquietud acerca de
+        nuestra política de privacidad, no dude en ponerse en contacto con nosotros.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Gracias por su confianza y por utilizar nuestro sitio web de manera responsable.
+        Atentamente,
+      &lt;/p&gt;
+      &lt;p class&#x3D;&quot;signature&quot;&gt;The Formatted Blog&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./conditions.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;mixins/mixins.scss&#x27;;
+
+section, .wrapper {
+  @include container();
+  @include row();
+}
+
+mat-tab-group {
+  margin-top: -18px;
+}
+
+.start {
+  display: block;
+  padding-top: 2rem;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 2rem 0;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 2.5rem 0 1.8rem 0;
+}
+
+p {
+  margin: 1rem 0;
+  text-align: justify;
+
+  @media(max-width: 992px) {
+    &amp;:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.bold {
+  transition: color 666ms ease-in-out;
+  color: var(--contrast-color);
+}
+
+ul {
+  list-style: none;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+
+  &amp; li {
+    margin-bottom: 1rem;
+  }
+}
+
+.signature {
+  font-size: 18px;
+  margin-top: 3rem;
+  font-style: italic;
+  color: var(--contrast-color);
+  transition: color 666ms ease-in-out;
+  margin-bottom: 0;
+}
+
+@media(max-width: 550px) {
+  p, ul {
+    font-size: 13px;
+  }
+
+  .start {
+    font-size: 11px;
+  }
+
+  h1 {
+    font-size: 18px;
+
+    &amp; span {
+      display: none;
+    }
+  }
+
+  h2 {
+    font-size: 17px;
+    margin-bottom: 1.2rem;
+  }
+
+  .signature {
+    font-size: 15px;
+    margin-top: 2rem;
+  }
+}
+
+hr {
+  border: 1px solid var(--border-color);
+  margin: 4rem 0 4rem 0;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="animated fadeIn">  <section class="conditions-content">    <div class="conditions animated fadeIn">      <b class="start">Esta política de condiciones de uso es válida a partir de Mayo 2023.</b>      <h1>TÉRMINOS Y CONDICIONES<span> - The Formatted Blog</span></h1>      <p>        The Formatted Blog, persona jurídica de derecho privado describe, a través de este documento, las normas        de uso del sitio <a href="https://formatted-blog.netlify.app" target="_blank">https://formatted-blog.netlify.app</a> y de        cualquier otro sitio web, tienda o aplicación operada por el titular. Al navegar por este sitio web,        consideramos que está de acuerdo con las condiciones de uso que figuran a continuación. Si no está de acuerdo con los         términos de este acuerdo, le pedimos que no haga ningún otro        uso de este sitio web, mucho menos que se registre o envíe sus datos personales. Si cambiamos nuestras        condiciones de uso, publicaremos el nuevo texto en este sitio web, con una fecha de        revisión actualizada. Podemos modificar este documento en cualquier momento. Si hay un cambio        significativo en los términos de este acuerdo, podemos informarle utilizando la información de        contacto que tenemos en nuestra base de datos o mediante una notificación.      </p>      <p>        El uso de este sitio web después de los cambios significa que usted acepta las condiciones de uso        revisadas. Si, después de leer la versión revisada, no está de acuerdo con sus términos, por favor, termine su acceso.      </p>      <h2><span class="bold">Sección 1</span> - Usuario</h2>      <p>        El uso de este sitio web le otorga automáticamente la condición de Usuario e implica su plena aceptación        de todas las directrices y condiciones incluidas en estas Condiciones.      </p>      <h2><span class="bold">Sección 2</span> - Adhesión de la política de privacidad</h2>      <p>        El uso de este sitio web implica la adhesión a estas Condiciones de Uso y a la versión más actualizada de        la Política de Privacidad de The Formatted Blog.      </p>      <h2><span class="bold">Sección 3</span> - Condiciones de acceso</h2>      <p>        En general, el acceso al sitio web de The Formatted Blog es gratuito y no requiere registro previo.        Sin embargo, para hacer uso de algunas funcionalidades, el usuario puede necesitar registrarse, creando        una cuenta de usuario con un nombre de usuario y una contraseña de acceso.        Es responsabilidad del usuario proporcionar únicamente información correcta, auténtica, válida, completa y        actualizada, así como no revelar su nombre de usuario y contraseña a terceros.        Algunas partes de este sitio web ofrecen al usuario la opción de publicar comentarios en determinadas        áreas. The Formatted Blog no consiente la publicación de contenidos de carácter discriminatorio, ofensivo        o ilícito, o que infrinjan los derechos de autor o cualquier otro derecho de terceros.        La publicación de cualquier contenido por parte del usuario de este sitio web, incluidos los mensajes y        comentarios, implica una licencia no exclusiva, irrevocable e irreversible para su uso, reproducción y        publicación por parte de The Formatted Blog en su sitio web, plataformas de internet y aplicaciones, o        incluso en otras plataformas, sin ninguna restricción o limitación.      </p>      <h2><span class="bold">Sección 4</span> - Cookies</h2>      <p>        La información sobre el uso que usted hace de este sitio web puede recogerse a través de las cookies. Las        cookies son piezas de información que se almacenan directamente en el equipo que está utilizando. Las        cookies permiten recoger información como el tipo de navegador, el tiempo de permanencia en el sitio web, las        páginas visitadas, las preferencias de idioma y otros datos de tráfico anónimos. Nosotros y nuestros proveedores        de servicios utilizamos la información para la protección de la seguridad, para facilitar la navegación,        mostrar la información de manera más eficiente y personalizar su experiencia al utilizar este sitio web, así como        para el seguimiento en línea. También recopilamos información estadística sobre el uso del sitio web para mejorar        continuamente nuestro diseño y funcionalidad, para entender cómo se utiliza el sitio web y para ayudarle a        resolver problemas relevantes.      </p>      <p>        Si no desea que se recoja su información a través de las cookies, existe un procedimiento sencillo en la        mayoría de los navegadores que permite rechazar automáticamente las cookies, o le da la opción de aceptar o        rechazar la transferencia de una cookie específica (o varias) de un sitio web concreto a su ordenador. Sin embargo,        esto puede crear inconvenientes en su uso del sitio web.        La configuración que elija puede afectar a su experiencia de navegación y al funcionamiento que requiere        el uso de cookies. En este sentido, rechazamos cualquier responsabilidad por las consecuencias derivadas del        funcionamiento limitado de este sitio web causado por la desactivación de las cookies en su dispositivo        (incapacidad para establecer o leer una cookie).      </p>      <h2><span class="bold">Sección 5</span> - Propiedad intelectual</h2>      <p>        Todos los elementos de The Formatted Blog son propiedad intelectual de la misma o de sus licenciantes.        Estos términos o el uso del sitio web no le otorgan ninguna licencia o derecho de uso de los derechos de        propiedad intelectual de The Formatted Blog o de cualquier tercero.      </p>      <h2><span class="bold">Sección 6</span> - Enlaces a sitios web de terceros</h2>      <p>        Este sitio web puede contener, de vez en cuando, enlaces de hipertexto que le redirigirán a sitios web de        nuestros socios, anunciantes, proveedores, etc. Si hace clic en uno de estos enlaces a cualquiera de estos        sitios, recuerde que cada sitio tiene sus propias prácticas de privacidad y que nosotros no somos        responsables de estas políticas. Por favor, consulte esas políticas antes de enviar cualquier dato personal a esos        sitios. No somos responsables de las políticas y prácticas de recopilación, uso y divulgación (incluidas las        prácticas de protección de datos) de otras organizaciones, como Facebook, Apple, Google, Microsoft, o cualquier otro        desarrollador de software o proveedor de aplicaciones, tienda de medios sociales, sistema operativo,        proveedor de servicios de internet o fabricante de dispositivos, incluidos los Datos Personales que usted divulgue a        otras organizaciones a través de las aplicaciones, en relación con dichas aplicaciones, o publicados en nuestras        redes sociales. Le recomendamos que se informe sobre la política de privacidad y las condiciones de uso de cada        sitio web visitado o proveedor de servicios utilizado.      </p>      <h2><span class="bold">Sección 7</span> - Plazos y modificaciones</h2>      <p>        El funcionamiento de este sitio web es por tiempo indefinido.        La totalidad del sitio web o cada una de sus secciones podrá ser cerrada, suspendida o interrumpida        unilateralmente por The Formatted Blog, en cualquier momento y sin previo aviso.      </p>      <h2><span class="bold">Sección8</span> - Datos personales</h2>      <p>        Durante el uso de este sitio web, ciertos datos personales serán recogidos y procesados por The Formatted        Blog        y/o los Socios. Las normas relativas al tratamiento de los datos personales de The Formatted Blog están        estipuladas en la Política de Privacidad.      </p>      <h2><span class="bold">Sección 9</span> - Contacto</h2>      <p>Si tiene alguna pregunta sobre las condiciones de uso, por favor póngase en contacto con nosotros por        correo electrónico <a href="mailto:theformattedblog@gmail.com">theformattedblog&#64;gmail.com</a>      </p>    </div>    <hr>    <div class="politics animated fadeIn">      <h1>POLÍTICA DE PRIVACIDAD<span> - The Formatted Blog</span></h1>      <p>        En nuestra plataforma de creación de contenido, entendemos el poder y la creatividad que los usuarios        aportan al mundo digital. Sin embargo, también somos conscientes de los desafíos y peligros asociados con        la creación de contenido en línea. Esta Política de Privacidad tiene como objetivo garantizar un entorno        seguro y responsable para todos los usuarios al utilizar nuestro sitio web.        Creemos en la importancia de promover la libertad de expresión y el intercambio de ideas, pero también        reconocemos la necesidad de establecer límites y salvaguardias para proteger a nuestros usuarios y a la        comunidad en general. Esta política establece las directrices y condiciones que deben seguirse al crear        contenido, abordando los riesgos potenciales y los comportamientos inaceptables.      </p>      <p>        Nuestra plataforma se esfuerza por fomentar la diversidad, el respeto mutuo y la convivencia armoniosa.        Por lo tanto, es fundamental que todos los usuarios entiendan y acepten las responsabilidades que conlleva        la creación de contenido en nuestra comunidad en línea.        Esta política no solo protege a los usuarios, sino también a aquellos que puedan verse afectados por el        contenido creado. Nos comprometemos a tomar medidas adecuadas para moderar y eliminar contenido que viole        los términos aquí establecidos, así como para investigar y abordar cualquier denuncia o reporte de        contenido inapropiado.      </p>      <p>        Al utilizar nuestro sitio web, usted acepta cumplir con los términos y condiciones de esta Política de        Privacidad y se compromete a actuar de manera responsable y respetuosa al crear contenido. Nos esforzamos        por proporcionarle una experiencia segura y enriquecedora, donde pueda expresarse libremente sin        comprometer la integridad y la seguridad de otros usuarios.        Recuerde que la creación de contenido conlleva una gran responsabilidad y tiene el poder de influir en los        demás. Le instamos a que utilice nuestro sitio web de manera ética y positiva, evitando cualquier        contenido que pueda resultar perjudicial, inapropiado o ilegal.        Estamos comprometidos con su privacidad y la protección de sus datos personales. Para obtener más        información sobre cómo recopilamos, utilizamos y protegemos sus datos, consulte nuestra Política de        Privacidad.      </p>      <h2><span class="bold">1.</span> Responsabilidad del Usuario</h2>      <p>        Al crear contenido en nuestro sitio web, usted asume la plena responsabilidad de sus acciones y se        compromete a no participar en ninguna actividad que pueda ser ilegal, inapropiada, difamatoria, ofensiva,        malintencionada o perjudicial para otros usuarios o terceros. Esto incluye, pero no se limita a:      </p>      <ul>        <li>          A) <b>Contenido inadecuado:</b> No se permite la creación de contenido que sea pornográfico, sexualmente          explícito, violento, discriminatorio, racista, xenófobo, o que promueva el odio, la violencia o cualquier forma de abuso.        </li>        <li>          B) <b>Contenido difamatorio:</b> No se permite la creación de contenido que difame, calumnie o perjudique          la reputación de individuos, organizaciones o entidades.        </li>        <li>          C) <b>Contenido ilegal:</b> No se permite la creación de contenido que viole leyes locales, nacionales o          internacionales, incluyendo, pero no limitado a, derechos de autor, marcas registradas, patentes, secretos comerciales o          derechos de privacidad.        </li>        <li>          D) <b>Contenido fraudulento:</b> No se permite la creación de contenido que sea engañoso, fraudulento o que          promueva actividades ilegales, como la piratería informática, el fraude financiero o la suplantación de identidad.        </li>        <li>          E) <b>Contenido perjudicial:</b> No se permite la creación de contenido que contenga virus, malware u otro tipo          de código malicioso que pueda dañar o comprometer la seguridad de nuestro sitio web, usuarios u otros sistemas.        </li>      </ul>      <h2><span class="bold">2.</span> Moderación del Contenido</h2>      <p>        Nos reservamos el derecho de moderar y eliminar cualquier contenido que consideremos inapropiado, ilegal o        que viole los términos de esta política de privacidad. Podemos llevar a cabo dicha moderación de manera automática o        mediante revisión manual, y nos esforzaremos por tomar las medidas necesarias para garantizar la integridad y seguridad de nuestro        sitio web.      </p>      <h2><span class="bold">3.</span> Protección de la Privacidad</h2>      <p>        Entendemos la importancia de proteger su privacidad y los datos personales que comparta en nuestro sitio        web. Nos comprometemos a cumplir con todas las leyes y regulaciones aplicables en materia de protección de        datos, y a utilizar sus datos personales únicamente con fines legítimos y en concordancia con nuestra Política de Privacidad.      </p>      <h2><span class="bold">4.</span> Denuncias y Reportes</h2>      <p>        Si encuentra contenido que considera inapropiado, ilegal o que viola los términos de esta política de        privacidad, le animamos a que nos lo informe de inmediato. Tomaremos las medidas necesarias para investigar y abordar        dichas denuncias de manera oportuna y adecuada. <a href="mailto:theformattedblog@gmail.com">theformattedblog&#64;gmail.com</a>      </p>      <h2><span class="bold">5.</span> Cambios en la Política de Privacidad</h2>      <p>        Nos reservamos el derecho de modificar o actualizar esta política de privacidad en cualquier momento y sin        previo aviso. Entendemos que la protección de su privacidad es fundamental, por lo que nos comprometemos a        informarle sobre cualquier cambio significativo en nuestra política de privacidad. Cuando realicemos modificaciones en esta política,         actualizaremos la fecha de "Última Actualización" al comienzo del documento. Le recomendamos que revise periódicamente esta política para estar al tanto de        cualquier cambio. Su uso continuado de nuestro sitio web después de realizar modificaciones constituirá su        aceptación de dichos cambios.      </p>      <p>        En caso de que realicemos cambios sustanciales que afecten sus derechos y la forma en que utilizamos su        información personal, le proporcionaremos un aviso destacado en nuestro sitio web o le enviaremos una        notificación por correo electrónico, si tenemos su dirección de correo electrónico en nuestros registros.      </p>      <p>        Le animamos a que revise regularmente esta política de privacidad y a que esté atento a cualquier        comunicación nuestra en relación con cambios en la misma. Si continúa utilizando nuestro sitio web después        de que se hayan realizado cambios, se considerará que ha aceptado los términos revisados de la política de        privacidad. Si no está de acuerdo con los términos de esta política de privacidad o con cualquier modificación futura,        le recomendamos que deje de utilizar nuestro sitio web y que elimine su cuenta, si corresponde.        Su confianza es importante para nosotros, y nos comprometemos a proteger su privacidad y mantenerlo        informado sobre cómo se utilizan sus datos personales. Si tiene alguna pregunta o inquietud acerca de        nuestra política de privacidad, no dude en ponerse en contacto con nosotros.      </p>      <p>        Gracias por su confianza y por utilizar nuestro sitio web de manera responsable.        Atentamente,      </p>      <p class="signature">The Formatted Blog</p>    </div>  </section></div></div>'
+    var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'app-action-bar'},{'name': 'ActivitySkeletonComponent', 'selector': 'app-activity-skeleton'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminContentComponent', 'selector': 'app-admin-content'},{'name': 'AdminDraftCardComponent', 'selector': 'app-admin-draft-card'},{'name': 'AdminDraftComponent', 'selector': 'app-admin-draft'},{'name': 'AdminSidebarComponent', 'selector': 'app-admin-sidebar'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoryBoxComponent', 'selector': 'app-category-box'},{'name': 'ConditionsComponent', 'selector': 'app-conditions'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation'},{'name': 'ContentSearchComponent', 'selector': 'app-content-search'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CreateContentComponent', 'selector': 'app-create-content'},{'name': 'CreateFormComponent', 'selector': 'app-create-form'},{'name': 'CreateSidebarComponent', 'selector': 'app-create-sidebar'},{'name': 'DraftCardComponent', 'selector': 'app-draft-card'},{'name': 'DraftComponent', 'selector': 'app-draft'},{'name': 'DraftContentComponent', 'selector': 'app-draft-content'},{'name': 'DraftPreviewDialogComponent', 'selector': 'app-draft-preview'},{'name': 'DraftSidebarComponent', 'selector': 'app-draft-sidebar'},{'name': 'EditProfileDialogComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterGalleryComponent', 'selector': 'app-footer-gallery'},{'name': 'FooterNavComponent', 'selector': 'app-footer-nav'},{'name': 'FormErrorComponent', 'selector': 'app-form-error'},{'name': 'FriendsCardComponent', 'selector': 'app-friends-card'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HelpContentComponent', 'selector': 'app-help-content'},{'name': 'HelpHeaderComponent', 'selector': 'app-help-header'},{'name': 'HelpSidebarComponent', 'selector': 'app-help-sidebar'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeContentComponent', 'selector': 'app-home-content'},{'name': 'HomeSidebarComponent', 'selector': 'app-home-sidebar'},{'name': 'LogInDialogComponent', 'selector': 'app-log-in'},{'name': 'MainPostComponent', 'selector': 'app-main-post'},{'name': 'MinWidthComponent', 'selector': 'app-min-width'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NewsMasonryComponent', 'selector': 'app-news-masonry'},{'name': 'PostCardComponent', 'selector': 'app-post-card'},{'name': 'PostCardSkeletonComponent', 'selector': 'app-post-card-skeleton'},{'name': 'PostCarrouselComponent', 'selector': 'app-post-carrousel'},{'name': 'PostComponent', 'selector': 'app-post'},{'name': 'PostContentComponent', 'selector': 'app-post-content'},{'name': 'PostIndexComponent', 'selector': 'app-post-index'},{'name': 'PostIndexSkeletonComponent', 'selector': 'app-post-index-skeleton'},{'name': 'PostSidebarComponent', 'selector': 'app-post-sidebar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDraftsComponent', 'selector': 'app-profile-drafts'},{'name': 'ProfileFavoritesComponent', 'selector': 'app-profile-favorites'},{'name': 'ProfileFriendsComponent', 'selector': 'app-profile-friends'},{'name': 'ProfileFriendsContentComponent', 'selector': 'app-profile-friends-content'},{'name': 'ProfileFriendsSidebarComponent', 'selector': 'app-profile-friends-sidebar'},{'name': 'ProfileHeaderComponent', 'selector': 'app-profile-header'},{'name': 'ProfileHomeComponent', 'selector': 'app-profile-home'},{'name': 'ProfileHomeContentComponent', 'selector': 'app-profile-home-content'},{'name': 'ProfileHomeSidebarComponent', 'selector': 'app-profile-home-sidebar'},{'name': 'ProfilePostsComponent', 'selector': 'app-profile-posts'},{'name': 'ProfilePublicComponent', 'selector': 'app-profile-public'},{'name': 'ProfileSettingsComponent', 'selector': 'app-profile-settings'},{'name': 'ProfileSettingsContentComponent', 'selector': 'app-profile-settings-content'},{'name': 'ProfileSettingsSidebarComponent', 'selector': 'app-profile-settings-sidebar'},{'name': 'PushDeniedDialogComponent', 'selector': 'app-push-denied'},{'name': 'QuillHelpDialogComponent', 'selector': 'app-quill-help'},{'name': 'QuillToolbarComponent', 'selector': 'app-quill-toolbar'},{'name': 'RecentPostBoxComponent', 'selector': 'app-recent-post-box'},{'name': 'RecentPostSkeletonComponent', 'selector': 'app-recent-post-skeleton'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchBarComponent', 'selector': 'app-search-bar'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearhContentComponent', 'selector': 'app-searh-content'},{'name': 'SearhSidebarComponent', 'selector': 'app-searh-sidebar'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SignInComponent', 'selector': 'app-sign-in'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SloganComponent', 'selector': 'app-slogan'},{'name': 'SnackOverlayComponent', 'selector': 'app-snack'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StickyAsideComponent', 'selector': 'app-sticky-aside'},{'name': 'TextSliderComponent', 'selector': 'app-text-slider'}];
+    var DIRECTIVES = [{'name': 'NavDirective', 'selector': '[StickyNav]'},{'name': 'StickyDirective', 'selector': '[Sticky]'},{'name': 'TopDirective', 'selector': '[TopDirective]'}];
+    var ACTUAL_COMPONENT = {'name': 'ConditionsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConditionsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

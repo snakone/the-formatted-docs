@@ -1,0 +1,667 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>formatted-blog documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">formatted-blog documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HelpContentComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/help/components/help-content/help-content.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-help-content</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./help-content.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./help-content.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#items" >items</a>
+                            </li>
+                            <li>
+                                <a href="#trigger" >trigger</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stickyFix" >stickyFix</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/app/pages/help/components/help-content/help-content.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stickyFix"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>stickyFix</b></span>
+                        <a href="#stickyFix"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>stickyFix()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/pages/help/components/help-content/help-content.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="items"></a>
+                    <span class="name">
+                        <span ><b>items</b></span>
+                        <a href="#items"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>FQA_ITEMS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/pages/help/components/help-content/help-content.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trigger"></a>
+                    <span class="name">
+                        <span ><b>trigger</b></span>
+                        <a href="#trigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/help/components/help-content/help-content.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component } from &#x27;@angular/core&#x27;;
+import { RESIZE_EVENT } from &#x27;@shared/data/constants&#x27;;
+import { FQA_ITEMS } from &#x27;@shared/data/data&#x27;;
+
+@Component({
+  selector: &#x27;app-help-content&#x27;,
+  templateUrl: &#x27;./help-content.component.html&#x27;,
+  styleUrls: [&#x27;./help-content.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class HelpContentComponent {
+
+  items &#x3D; FQA_ITEMS;
+  trigger &#x3D; false;
+
+  ngOnInit() { }
+
+  public stickyFix(): void {
+    window.dispatchEvent(new Event(RESIZE_EVENT));
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;wrapper&quot;&gt;
+  &lt;h1&gt;Preguntas frecuentes&lt;/h1&gt;
+  &lt;p&gt;
+    Si es tu primera vez aquí y no sabes muy bien de que va todo esto, estás en el sitio indicado. Aunque si ya has pasado por aquí, nunca esta 
+    demás repasar algunos conceptos. Este es el mejor sitio para resolver dudas y darte un buen empujón antes de empezar a crear contenido.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Para hacer un resumen, &lt;b&gt;The Formatted Blog&lt;/b&gt; es un blog en línea interactivo donde puedes compartir texto de una manera rápida y elegante. 
+    Aunque la idea es muy general y no está inspirada en ella, hay una página conocida similar que sigue el mismo concepto, 
+    &lt;a href&#x3D;&quot;https://medium.com&quot; target&#x3D;&quot;_blank&quot;&gt;https://medium.com&lt;/a&gt;. Básicamente es algo parecido hecho desde cero.
+  &lt;/p&gt;
+  @for(item of items; track item.label) {
+    &lt;details&gt;
+      &lt;summary (click)&#x3D;&quot;stickyFix()&quot;&gt;{{item.label}}&lt;/summary&gt;
+      &lt;div class&#x3D;&quot;accordion&quot;&gt;
+        @for(p of item.content; track p) {
+          &lt;p [innerHTML]&#x3D;&quot;p | Sanitizer:&#x27;html&#x27;&quot;&gt;&lt;/p&gt;
+        }
+      &lt;/div&gt;
+    &lt;/details&gt;
+  }
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./help-content.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;mixins/mixins.scss&#x27;;
+
+.wrapper {
+  min-height: 250px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 1.8rem;
+
+  @media (max-width: 550px) {
+    margin-top: 8px;
+  }
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 1rem;
+
+  &amp;:last-of-type {
+    margin-bottom: 3rem;
+  }
+}
+
+details {
+  @include shadow-card();
+  margin-bottom: 1.5rem;
+
+  &amp; summary {
+    padding: 16px;
+    position: relative;
+    cursor: pointer;
+
+    &amp;::marker {
+      content: &#x27;&#x27;
+    }
+
+    &amp;::after {
+      position: absolute;
+      right: 16px;
+      top: 30%;
+      font-family: &quot;Font Awesome 5 Free&quot;;
+      font-weight: 900;
+      content: &quot;\f067&quot;;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      color: var(--contrast-color);
+      transition: color 666ms ease-in-out, transform 333ms ease-in-out;
+      transform: rotate(0);
+    }
+  }
+
+  &amp;[open] summary:after {
+    content: &quot;\f068&quot;;
+    transition: transform 300ms ease-in-out;
+    transform: rotate(360deg);
+  }
+
+  &amp; .accordion {
+    opacity: .8;
+    padding: 18px 24px;
+    background-color: var(--border-color);
+    transition: background-color 666ms ease-in-out,
+                color 666ms ease-in-out;
+    color: var(--dark-color);
+
+    &amp; p {
+      text-align: initial;
+      text-wrap: pretty;
+
+      &amp;:last-child {
+        margin-bottom: 0;
+      } 
+    }
+  }
+
+  &amp;:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width: 992px) {
+  details {
+    &amp;:last-of-type {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+@media(max-width: 675px) {
+  details {
+    &amp; summary {
+      font-size: 13px;
+      padding: 12px;
+      padding-right: 70px;
+      line-height: 20px;
+
+      &amp;:after {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media(max-width: 550px) {
+  .wrapper p {
+    font-size: 13px;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="wrapper">  <h1>Preguntas frecuentes</h1>  <p>    Si es tu primera vez aquí y no sabes muy bien de que va todo esto, estás en el sitio indicado. Aunque si ya has pasado por aquí, nunca esta     demás repasar algunos conceptos. Este es el mejor sitio para resolver dudas y darte un buen empujón antes de empezar a crear contenido.  </p>  <p>    Para hacer un resumen, <b>The Formatted Blog</b> es un blog en línea interactivo donde puedes compartir texto de una manera rápida y elegante.     Aunque la idea es muy general y no está inspirada en ella, hay una página conocida similar que sigue el mismo concepto,     <a href="https://medium.com" target="_blank">https://medium.com</a>. Básicamente es algo parecido hecho desde cero.  </p>  @for(item of items; track item.label) {    <details>      <summary (click)="stickyFix()">{{item.label}}</summary>      <div class="accordion">        @for(p of item.content; track p) {          <p [innerHTML]="p | Sanitizer:\'html\'"></p>        }      </div>    </details>  }</div></div>'
+    var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'app-action-bar'},{'name': 'ActivitySkeletonComponent', 'selector': 'app-activity-skeleton'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminContentComponent', 'selector': 'app-admin-content'},{'name': 'AdminDraftCardComponent', 'selector': 'app-admin-draft-card'},{'name': 'AdminDraftComponent', 'selector': 'app-admin-draft'},{'name': 'AdminSidebarComponent', 'selector': 'app-admin-sidebar'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoryBoxComponent', 'selector': 'app-category-box'},{'name': 'ConditionsComponent', 'selector': 'app-conditions'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation'},{'name': 'ContentSearchComponent', 'selector': 'app-content-search'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CreateContentComponent', 'selector': 'app-create-content'},{'name': 'CreateFormComponent', 'selector': 'app-create-form'},{'name': 'CreateSidebarComponent', 'selector': 'app-create-sidebar'},{'name': 'DraftCardComponent', 'selector': 'app-draft-card'},{'name': 'DraftComponent', 'selector': 'app-draft'},{'name': 'DraftContentComponent', 'selector': 'app-draft-content'},{'name': 'DraftPreviewDialogComponent', 'selector': 'app-draft-preview'},{'name': 'DraftSidebarComponent', 'selector': 'app-draft-sidebar'},{'name': 'EditProfileDialogComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterGalleryComponent', 'selector': 'app-footer-gallery'},{'name': 'FooterNavComponent', 'selector': 'app-footer-nav'},{'name': 'FormErrorComponent', 'selector': 'app-form-error'},{'name': 'FriendsCardComponent', 'selector': 'app-friends-card'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HelpContentComponent', 'selector': 'app-help-content'},{'name': 'HelpHeaderComponent', 'selector': 'app-help-header'},{'name': 'HelpSidebarComponent', 'selector': 'app-help-sidebar'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeContentComponent', 'selector': 'app-home-content'},{'name': 'HomeSidebarComponent', 'selector': 'app-home-sidebar'},{'name': 'LogInDialogComponent', 'selector': 'app-log-in'},{'name': 'MainPostComponent', 'selector': 'app-main-post'},{'name': 'MinWidthComponent', 'selector': 'app-min-width'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NewsMasonryComponent', 'selector': 'app-news-masonry'},{'name': 'PostCardComponent', 'selector': 'app-post-card'},{'name': 'PostCardSkeletonComponent', 'selector': 'app-post-card-skeleton'},{'name': 'PostCarrouselComponent', 'selector': 'app-post-carrousel'},{'name': 'PostComponent', 'selector': 'app-post'},{'name': 'PostContentComponent', 'selector': 'app-post-content'},{'name': 'PostIndexComponent', 'selector': 'app-post-index'},{'name': 'PostIndexSkeletonComponent', 'selector': 'app-post-index-skeleton'},{'name': 'PostSidebarComponent', 'selector': 'app-post-sidebar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDraftsComponent', 'selector': 'app-profile-drafts'},{'name': 'ProfileFavoritesComponent', 'selector': 'app-profile-favorites'},{'name': 'ProfileFriendsComponent', 'selector': 'app-profile-friends'},{'name': 'ProfileFriendsContentComponent', 'selector': 'app-profile-friends-content'},{'name': 'ProfileFriendsSidebarComponent', 'selector': 'app-profile-friends-sidebar'},{'name': 'ProfileHeaderComponent', 'selector': 'app-profile-header'},{'name': 'ProfileHomeComponent', 'selector': 'app-profile-home'},{'name': 'ProfileHomeContentComponent', 'selector': 'app-profile-home-content'},{'name': 'ProfileHomeSidebarComponent', 'selector': 'app-profile-home-sidebar'},{'name': 'ProfilePostsComponent', 'selector': 'app-profile-posts'},{'name': 'ProfilePublicComponent', 'selector': 'app-profile-public'},{'name': 'ProfileSettingsComponent', 'selector': 'app-profile-settings'},{'name': 'ProfileSettingsContentComponent', 'selector': 'app-profile-settings-content'},{'name': 'ProfileSettingsSidebarComponent', 'selector': 'app-profile-settings-sidebar'},{'name': 'PushDeniedDialogComponent', 'selector': 'app-push-denied'},{'name': 'QuillHelpDialogComponent', 'selector': 'app-quill-help'},{'name': 'QuillToolbarComponent', 'selector': 'app-quill-toolbar'},{'name': 'RecentPostBoxComponent', 'selector': 'app-recent-post-box'},{'name': 'RecentPostSkeletonComponent', 'selector': 'app-recent-post-skeleton'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchBarComponent', 'selector': 'app-search-bar'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearhContentComponent', 'selector': 'app-searh-content'},{'name': 'SearhSidebarComponent', 'selector': 'app-searh-sidebar'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SignInComponent', 'selector': 'app-sign-in'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SloganComponent', 'selector': 'app-slogan'},{'name': 'SnackOverlayComponent', 'selector': 'app-snack'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StickyAsideComponent', 'selector': 'app-sticky-aside'},{'name': 'TextSliderComponent', 'selector': 'app-text-slider'}];
+    var DIRECTIVES = [{'name': 'NavDirective', 'selector': '[StickyNav]'},{'name': 'StickyDirective', 'selector': '[Sticky]'},{'name': 'TopDirective', 'selector': '[TopDirective]'}];
+    var ACTUAL_COMPONENT = {'name': 'HelpContentComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HelpContentComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

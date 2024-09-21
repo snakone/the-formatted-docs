@@ -1,0 +1,2030 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>formatted-blog documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">formatted-blog documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  QuillToolbarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-quill-toolbar</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./quill-toolbar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./quill-toolbar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activatedRoute" >activatedRoute</a>
+                            </li>
+                            <li>
+                                <a href="#crafter" >crafter</a>
+                            </li>
+                            <li>
+                                <a href="#createDraftSrv" >createDraftSrv</a>
+                            </li>
+                            <li>
+                                <a href="#destroyRef" >destroyRef</a>
+                            </li>
+                            <li>
+                                <a href="#draftsFacade" >draftsFacade</a>
+                            </li>
+                            <li>
+                                <a href="#iconList" >iconList</a>
+                            </li>
+                            <li>
+                                <a href="#ls" >ls</a>
+                            </li>
+                            <li>
+                                <a href="#quillSrv" >quillSrv</a>
+                            </li>
+                            <li>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#saveTypes" >saveTypes</a>
+                            </li>
+                            <li>
+                                <a href="#saving$" >saving$</a>
+                            </li>
+                            <li>
+                                <a href="#switchAction" >switchAction</a>
+                            </li>
+                            <li>
+                                <a href="#totalDrafts$" >totalDrafts$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#checkAutoSave" >checkAutoSave</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#download" >download</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getTotalDrafts" >getTotalDrafts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#goToForm" >goToForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#help" >help</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#new" >new</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#preview" >preview</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#saveManualDraft" >saveManualDraft</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#draft" >draft</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clean" >clean</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="draft"></a>
+                        <b>draft</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Post.html" target="_self" >Post</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:43</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <b>form</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clean"></a>
+                        <b>clean</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:45</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkAutoSave"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>checkAutoSave</b></span>
+                        <a href="#checkAutoSave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkAutoSave()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks the {AUTO_SAVE_KEY} on the Local Storage.
+Updates the Saving State accordingly.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(saving: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="155"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Delete the current Draft. Ask for confirmation.</p>
+<p>Sends the draft id to make ZoomOut animation.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>saving</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Saving State</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="download"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>download</b></span>
+                        <a href="#download"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>download(saving: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Download the curren Draft as HTML. Disabled if {saving} is true.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>saving</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Saving State</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTotalDrafts"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getTotalDrafts</b></span>
+                        <a href="#getTotalDrafts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTotalDrafts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Get the total amount of User Drafts from the store.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToForm"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>goToForm</b></span>
+                        <a href="#goToForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>goToForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="169"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:169</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Change route to /form. Does nothing if no {draft}</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="help"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>help</b></span>
+                        <a href="#help"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>help(saving: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens the help dialog. Disabled if {saving} is true.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>saving</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Saving State</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="new"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>new</b></span>
+                        <a href="#new"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>new(saving: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Option to create a Draft from scratch. Ask for confirmation.
+After confirm, saves the current {draft} and reset it.</p>
+<p>Excepts: {saving} is true, or the {draft} is temporal.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>saving</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Saving State</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="177"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:177</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Reset the Saving State</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preview"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>preview</b></span>
+                        <a href="#preview"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>preview(saving: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens the preview dialog. Disabled if {saving} is true.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>saving</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Saving State</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveManualDraft"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>saveManualDraft</b></span>
+                        <a href="#saveManualDraft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveManualDraft()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sends the draft id to save it manually.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activatedRoute"></a>
+                    <span class="name">
+                        <span ><b>activatedRoute</b></span>
+                        <a href="#activatedRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ActivatedRoute)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crafter"></a>
+                    <span class="name">
+                        <span ><b>crafter</b></span>
+                        <a href="#crafter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CrafterService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDraftSrv"></a>
+                    <span class="name">
+                        <span ><b>createDraftSrv</b></span>
+                        <a href="#createDraftSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CreateDraftService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyRef"></a>
+                    <span class="name">
+                        <span ><b>destroyRef</b></span>
+                        <a href="#destroyRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(DestroyRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftsFacade"></a>
+                    <span class="name">
+                        <span ><b>draftsFacade</b></span>
+                        <a href="#draftsFacade"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(DraftsFacade)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iconList"></a>
+                    <span class="name">
+                        <span ><b>iconList</b></span>
+                        <a href="#iconList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>CREATE_ACTION_LIST</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ls"></a>
+                    <span class="name">
+                        <span ><b>ls</b></span>
+                        <a href="#ls"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(StorageService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillSrv"></a>
+                    <span class="name">
+                        <span ><b>quillSrv</b></span>
+                        <a href="#quillSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(QuillService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveTypes"></a>
+                    <span class="name">
+                        <span ><b>saveTypes</b></span>
+                        <a href="#saveTypes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SavingTypeEnum</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saving$"></a>
+                    <span class="name">
+                        <span ><b>saving$</b></span>
+                        <a href="#saving$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/SavingType.html" target="_self" >Observable&lt;SavingType&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchAction"></a>
+                    <span class="name">
+                        <span ><b>switchAction</b></span>
+                        <a href="#switchAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    new: (saving: boolean) &#x3D;&gt; this.new(saving),
+    preview: (saving: boolean) &#x3D;&gt; this.preview(saving),
+    clean: (saving: boolean) &#x3D;&gt; {if (!saving) this.clean.emit()},
+    delete: (saving: boolean) &#x3D;&gt; this.delete(saving),
+    download: (saving: boolean) &#x3D;&gt; this.download(saving),
+    help: (saving: boolean) &#x3D;&gt; this.help(saving),
+    form: () &#x3D;&gt; this.goToForm()
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Object used on the HTML to map the icons to actions.</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>key</td>
+                                                    <td>
+                                                            <code><p>The icon key</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>saving</td>
+                                                    <td>
+                                                            <code><p>Saving State</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalDrafts$"></a>
+                    <span class="name">
+                        <span ><b>totalDrafts$</b></span>
+                        <a href="#totalDrafts$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;number&gt; | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/shared/snippets/quill-toolbar/quill-toolbar.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, DestroyRef, inject } from &#x27;@angular/core&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { filter, Observable, map, tap } from &#x27;rxjs&#x27;;
+import { takeUntilDestroyed } from &#x27;@angular/core/rxjs-interop&#x27;;
+
+import { DraftsFacade } from &#x27;@store/drafts/drafts.facade&#x27;;
+import { CrafterService } from &#x27;@core/services/crafter/crafter.service&#x27;;
+import { Post } from &#x27;@shared/types/interface.post&#x27;;
+import { QuillService } from &#x27;@core/services/quill/quill.service&#x27;;
+import { CreateDraftService } from &#x27;@pages/create/services/create-draft.service&#x27;;
+import { SavingType } from &#x27;@shared/types/interface.app&#x27;;
+
+import { AUTO_SAVE_KEY, MESSAGE_KEY } from &#x27;@shared/data/constants&#x27;;
+import { SavingTypeEnum } from &#x27;@shared/types/types.enums&#x27;;
+import { CREATE_ACTION_LIST } from &#x27;@shared/data/data&#x27;;
+import { StorageService } from &#x27;@core/services/storage/storage.service&#x27;;
+
+import { 
+  SAVE_CONFIRMATION, 
+  DELETE_CONFIRMATION, 
+  PREVIEW_DRAFT_DIALOG, 
+  QUILL_HELP_DIALOG 
+} from &#x27;@shared/data/dialogs&#x27;;
+
+@Component({
+  selector: &#x27;app-quill-toolbar&#x27;,
+  templateUrl: &#x27;./quill-toolbar.component.html&#x27;,
+  styleUrls: [&#x27;./quill-toolbar.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class QuillToolbarComponent {
+
+  crafter &#x3D; inject(CrafterService);
+  draftsFacade &#x3D; inject(DraftsFacade);
+  router &#x3D; inject(Router);
+  activatedRoute &#x3D; inject(ActivatedRoute);
+  quillSrv &#x3D; inject(QuillService);
+  createDraftSrv &#x3D; inject(CreateDraftService);
+  destroyRef &#x3D; inject(DestroyRef);
+  ls &#x3D; inject(StorageService);
+
+  @Input() draft: Post;
+  @Input() form &#x3D; false;
+  @Output() clean &#x3D; new EventEmitter&lt;void&gt;();
+  saving$: Observable&lt;SavingType&gt;;
+  totalDrafts$: Observable&lt;number&gt; | undefined;
+  saveTypes &#x3D; SavingTypeEnum;
+  
+  iconList &#x3D; CREATE_ACTION_LIST;
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.saving$ &#x3D; this.draftsFacade.saving$;
+    this.getTotalDrafts();
+    this.checkAutoSave();
+  }
+
+  /**
+   * Checks the {AUTO_SAVE_KEY} on the Local Storage.
+   * Updates the Saving State accordingly.
+  */
+  public checkAutoSave(): void {
+    if (!this.ls.getSettings(AUTO_SAVE_KEY) as boolean) {
+      this.draftsFacade.setSaving({value: false, type: SavingTypeEnum.TEMPORAL});
+    }
+  }
+
+  /**
+   * Get the total amount of User Drafts from the store.
+  */
+  private getTotalDrafts(): void {
+    this.totalDrafts$ &#x3D; this.draftsFacade.drafts$.pipe(
+      map(drafts &#x3D;&gt; drafts?.length || 0)
+    );
+  }
+
+  /**
+   * Object used on the HTML to map the icons to actions.
+   * @param key The icon key
+   * @param saving Saving State
+  */
+  switchAction: {[key: string]: (saving?: boolean) &#x3D;&gt; void} &#x3D; {
+    new: (saving: boolean) &#x3D;&gt; this.new(saving),
+    preview: (saving: boolean) &#x3D;&gt; this.preview(saving),
+    clean: (saving: boolean) &#x3D;&gt; {if (!saving) this.clean.emit()},
+    delete: (saving: boolean) &#x3D;&gt; this.delete(saving),
+    download: (saving: boolean) &#x3D;&gt; this.download(saving),
+    help: (saving: boolean) &#x3D;&gt; this.help(saving),
+    form: () &#x3D;&gt; this.goToForm()
+  };
+
+  /**
+   * Option to create a Draft from scratch. Ask for confirmation.
+   * After confirm, saves the current {draft} and reset it.
+   * 
+   * Excepts: {saving} is true, or the {draft} is temporal.
+   * @param saving Saving State
+  */
+  private new(saving: boolean): void {
+    if (!this.draft || saving || this.draft.temporal) { return; }
+    this.crafter.confirmation(SAVE_CONFIRMATION)
+    ?.afterClosed()
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        filter(Boolean),
+        tap(_ &#x3D;&gt; this.draftsFacade.updateKey(
+          {id: this.draft._id, keys: { key: MESSAGE_KEY, value: this.draft.message }}
+        ))
+    ).subscribe(_ &#x3D;&gt; this.draftsFacade.resetActive());
+  }
+
+  /**
+   * Opens the preview dialog. Disabled if {saving} is true.
+   * @param saving Saving State
+  */
+  private preview(saving: boolean): void {
+    if (!this.draft || saving) { return; }
+    this.crafter.dialog(PREVIEW_DRAFT_DIALOG);
+  }
+
+  /**
+   * Opens the help dialog. Disabled if {saving} is true.
+   * @param saving Saving State
+  */
+  private help(saving: boolean): void {
+    if (saving) { return; }
+    this.crafter.dialog(QUILL_HELP_DIALOG);
+  }
+
+  /**
+   * Download the curren Draft as HTML. Disabled if {saving} is true.
+   * @param saving Saving State
+  */
+  private download(saving: boolean): void {
+    if (!this.draft || saving) { return; }
+    this.quillSrv.convertToHTML(this.draft);
+  }
+
+  /**
+   * Sends the draft id to save it manually.
+  */
+  public saveManualDraft(): void {
+    this.createDraftSrv.onSaveManual(this.draft?._id || null);
+  }
+
+  /**
+   * Delete the current Draft. Ask for confirmation.
+   * 
+   * Sends the draft id to make ZoomOut animation.
+   * @param saving Saving State
+  */
+
+  private delete(saving: boolean): void {
+    if (!this.draft || saving) { return; }
+    this.crafter.confirmation(DELETE_CONFIRMATION)
+    ?.afterClosed()
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        filter(Boolean),
+        tap(_ &#x3D;&gt; this.createDraftSrv.onDeleteDraft(this.draft._id))
+    ).subscribe(_ &#x3D;&gt; this.draftsFacade.delete(this.draft._id));
+  }
+
+  /**
+   * Change route to /form. Does nothing if no {draft}
+  */
+  private goToForm(): void {
+    if (!this.draft) { return; }
+    this.router.navigate([&#x27;form&#x27;], {relativeTo: this.activatedRoute});
+  }
+
+  /**
+   * Reset the Saving State 
+  */
+  ngOnDestroy() {
+    this.draftsFacade.resetSaving();
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;toolbar&quot; [ngClass]&#x3D;&quot;{&#x27;form&#x27;: form}&quot;&gt;  &lt;!-- TOOLBAR --&gt;
+  &lt;div class&#x3D;&quot;flex&quot;&gt;
+    &lt;span class&#x3D;&quot;total&quot;&gt;&lt;i class&#x3D;&quot;far fa-paper-plane&quot;&gt;&lt;/i&gt; {{totalDrafts$ | async}}&lt;/span&gt; &lt;!-- TOTAL --&gt;
+    @if(saving$ | async; as state) {
+      @switch(state.type) {
+        @case(saveTypes.SAVING) {
+          &lt;div class&#x3D;&quot;icons animated fadeIn saving&quot;&gt;
+            &lt;i [class]&#x3D;&quot;state.value ? &#x27;fas fa-spinner fa-pulse&#x27; : &#x27;fas fa-check&#x27;&quot;&gt;&lt;/i&gt; 
+            &lt;span&gt;{{state.value ? &#x27;Guardando...&#x27; : &#x27;Guardado&#x27;}}&lt;/span&gt;
+          &lt;/div&gt;
+        }
+        @case(saveTypes.WARNING) {
+          &lt;div class&#x3D;&quot;icons animated fadeIn warning&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-exclamation-triangle&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Error al guardar. Comprueba los datos&lt;/span&gt;
+          &lt;/div&gt;
+        }
+        @case(saveTypes.TEMPORAL) {
+          &lt;div class&#x3D;&quot;icons animated fadeIn temporal&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-exclamation-triangle&quot;
+               [matTooltip]&#x3D;&quot;&#x27;Guardado manual&#x27;&quot;&gt;
+            &lt;/i&gt;
+            &lt;!-- SAVE ICON --&gt;
+            &lt;i [matTooltip]&#x3D;&quot;&#x27;Guardar&#x27;&quot; 
+               (click)&#x3D;&quot;saveManualDraft()&quot; 
+               class&#x3D;&quot;far fa-save animated fadeIn&quot;&gt;
+            &lt;/i&gt;
+            &lt;!-- SAVE TEXT --&gt;
+            &lt;span (click)&#x3D;&quot;saveManualDraft()&quot; 
+                  class&#x3D;&quot;animated fadeIn&quot;&gt;Guardar cambios.
+            &lt;/span&gt;
+          &lt;/div&gt;
+        }
+      }
+    }
+  &lt;/div&gt;
+  @if({saving: saving$ | async}; as obs) {
+    &lt;div class&#x3D;&quot;actions&quot;&gt;
+      @if(!form) {
+        &lt;!-- ACTIONS --&gt;
+        @for(item of iconList; track item.label) {
+          &lt;i [class]&#x3D;&quot;item.icon&quot;
+             [matTooltip]&#x3D;&quot;(!obs.saving?.value &amp;&amp; draft) ? item.label : null&quot;
+             (click)&#x3D;&quot;switchAction[item.action](obs.saving?.value)&quot;
+             [ngClass]&#x3D;&quot;{&#x27;disabled&#x27;: 
+                obs.saving?.value || !draft || (draft.temporal &amp;&amp; (item.action &#x3D;&#x3D;&#x3D; &#x27;new&#x27;))
+             }&quot;&gt;
+          &lt;/i&gt;
+        }
+        &lt;!-- HELP --&gt;
+        &lt;i class&#x3D;&quot;fas fa-question-circle&quot; 
+          matTooltip&#x3D;&quot;Ayuda&quot; 
+          (click)&#x3D;&quot;switchAction.help(obs.saving?.value)&quot;&gt;
+        &lt;/i&gt;
+        &lt;!-- FORM --&gt;
+        &lt;i class&#x3D;&quot;fas fa-spell-check&quot;
+          [matTooltip]&#x3D;&quot;(!obs.saving?.value &amp;&amp; draft) ? &#x27;Formulario&#x27; : null&quot;
+          [ngClass]&#x3D;&quot;{&#x27;disabled&#x27;: obs.saving?.value || !draft}&quot;
+          (click)&#x3D;&quot;switchAction.form()&quot;&gt;
+        &lt;/i&gt;
+      } @else {
+        &lt;!-- CLEAN --&gt;
+        &lt;i class&#x3D;&quot;fas fa-broom&quot;
+          matTooltip&#x3D;&quot;Limpiar&quot;
+          (click)&#x3D;&quot;switchAction.clean(obs.saving?.value)&quot;&gt;
+        &lt;/i&gt;
+        &lt;!-- HELP --&gt;
+        &lt;i class&#x3D;&quot;fas fa-question-circle&quot; 
+          matTooltip&#x3D;&quot;Ayuda&quot; 
+          (click)&#x3D;&quot;switchAction.help(obs.saving?.value)&quot;&gt;
+        &lt;/i&gt;
+        &lt;!-- BACK --&gt;
+        @if (form) {
+          &lt;i class&#x3D;&quot;fas fa-pen-nib&quot;
+                    matTooltip&#x3D;&quot;Lienzo&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;../&#x27;]&quot;&gt;
+          &lt;/i&gt;
+        }
+      }
+    &lt;/div&gt;
+  }
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./quill-toolbar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">$icon-size: 16px;
+
+.flex {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @media(width &lt; 600px) {
+    position: relative;
+    top: -1px;
+  }
+}
+
+.toolbar {
+  border: none;
+  border-top: 1px solid var(--navigation-border);
+  transition: border 666ms ease-in-out;
+  padding: 12px 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &amp; i:not(.fa-pulse):not(.fa-check):not(.fa-exclamation-triangle) {
+    width: 28px;
+    height: 24px;
+    padding: 3px 8px;
+    position: relative;
+    top: .5px;
+    cursor: pointer;
+    font-size: $icon-size;
+    transition: filter 200ms ease-in;
+    &amp;:hover:not(.disabled) { color: var(--contrast-color) }
+
+    @media(width &lt; 550px) {
+      font-size: 14px;
+      width: 24px;
+    }
+  }
+
+  // SUCCESS
+  &amp; i.fa-check { 
+    top: 0;
+    color: var(--success-color);
+    margin-right: 1rem;
+    font-size: $icon-size;
+  }
+
+  // SAVING SPINNER
+  &amp; i.fa-spinner.fa-pulse {
+    font-size: $icon-size;
+    margin-right: 1rem;
+  }
+
+  &amp; .actions i {
+    &amp;:nth-last-child(2) { 
+      margin-left: 30px;
+
+      @media(max-width: 450px) {
+        margin-left: 6px;
+      }
+     }
+
+    &amp;:nth-child(2) {
+      margin-left: 23px;
+      margin-right: 5px;
+
+      @media(max-width: 450px) {
+        margin-left: 12px;
+      }
+    }
+
+    &amp;.disabled {
+      cursor: not-allowed;
+
+      &amp;:not(.fa-spell-check) {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &amp; i.fa-pulse {
+    margin-right: .8rem;
+    position: relative;
+  }
+
+  &amp; i.fa-trash-alt {
+    margin: 0 4px 0 6px;
+  }
+
+  // GO TO FORM
+  &amp; i.fa-spell-check {
+    margin-left: 10px;
+    color: var(--contrast-color);
+
+    &amp;.disabled {
+      opacity: .7;
+    }
+  }
+
+  // SAVING WARNING
+  &amp; i.fa-exclamation-triangle {
+    color: var(--error-color);
+    top: -1px !important;
+    margin-right: .8rem;
+  }
+
+  &amp; .total {
+    margin-left: -5px;
+    font-size: $icon-size;
+    // TOTAL DRAFTS
+    &amp; i.fa-paper-plane {
+      margin-right: 8px;
+      position: relative;
+      top: 2px;
+    }
+
+    @media(width &lt; 550px) {
+      font-size: 13px;
+    }
+  }
+
+  // HELP
+  &amp; i.fa-question-circle {
+    font-size: $icon-size;
+    top: 1.5px !important;
+  }
+
+  &amp; i.fa-external-link-alt {
+    margin-left: 2px;
+  }
+
+  // SAVING
+  &amp; .icons {
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+    margin-left: 28px;
+
+    &amp;.warning {
+      margin-left: 20px;
+    }
+
+    &amp;.temporal {
+      margin-left: 19px;
+
+      &amp;:hover {
+        &amp; span {
+          color: var(--contrast-color);
+          cursor: pointer;
+        }
+      }
+
+      &amp; .fa-save {
+        display: none;
+
+        @media(width &lt; 600px) {
+          display: initial;
+          position: relative;
+          left: -5px;
+        }
+      }
+    }
+    
+    @media(width &lt; 550px) {
+      font-size: 13px;
+    }
+  }
+
+  @media(width &lt; 600px) {
+    &amp; .animated {
+      &amp; span {
+        display: none;
+      }
+    }
+  }
+}
+
+.toolbar.form {
+ &amp; .actions i {
+  &amp;:nth-child(2) {
+    margin-left: 30px;
+    margin-right: initial;
+  }
+  &amp;:nth-child(3) {
+    margin-left: 11px;
+    margin-right: -1px;
+  }
+ }
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="toolbar" [ngClass]="{\'form\': form}">  <!-- TOOLBAR -->  <div class="flex">    <span class="total"><i class="far fa-paper-plane"></i> {{totalDrafts$ | async}}</span> <!-- TOTAL -->    @if(saving$ | async; as state) {      @switch(state.type) {        @case(saveTypes.SAVING) {          <div class="icons animated fadeIn saving">            <i [class]="state.value ? \'fas fa-spinner fa-pulse\' : \'fas fa-check\'"></i>             <span>{{state.value ? \'Guardando...\' : \'Guardado\'}}</span>          </div>        }        @case(saveTypes.WARNING) {          <div class="icons animated fadeIn warning">            <i class="fas fa-exclamation-triangle"></i>            <span>Error al guardar. Comprueba los datos</span>          </div>        }        @case(saveTypes.TEMPORAL) {          <div class="icons animated fadeIn temporal">            <i class="fas fa-exclamation-triangle"               [matTooltip]="\'Guardado manual\'">            </i>            <!-- SAVE ICON -->            <i [matTooltip]="\'Guardar\'"                (click)="saveManualDraft()"                class="far fa-save animated fadeIn">            </i>            <!-- SAVE TEXT -->            <span (click)="saveManualDraft()"                   class="animated fadeIn">Guardar cambios.            </span>          </div>        }      }    }  </div>  @if({saving: saving$ | async}; as obs) {    <div class="actions">      @if(!form) {        <!-- ACTIONS -->        @for(item of iconList; track item.label) {          <i [class]="item.icon"             [matTooltip]="(!obs.saving?.value && draft) ? item.label : null"             (click)="switchAction[item.action](obs.saving?.value)"             [ngClass]="{\'disabled\':                 obs.saving?.value || !draft || (draft.temporal && (item.action === \'new\'))             }">          </i>        }        <!-- HELP -->        <i class="fas fa-question-circle"           matTooltip="Ayuda"           (click)="switchAction.help(obs.saving?.value)">        </i>        <!-- FORM -->        <i class="fas fa-spell-check"          [matTooltip]="(!obs.saving?.value && draft) ? \'Formulario\' : null"          [ngClass]="{\'disabled\': obs.saving?.value || !draft}"          (click)="switchAction.form()">        </i>      } @else {        <!-- CLEAN -->        <i class="fas fa-broom"          matTooltip="Limpiar"          (click)="switchAction.clean(obs.saving?.value)">        </i>        <!-- HELP -->        <i class="fas fa-question-circle"           matTooltip="Ayuda"           (click)="switchAction.help(obs.saving?.value)">        </i>        <!-- BACK -->        @if (form) {          <i class="fas fa-pen-nib"                    matTooltip="Lienzo"                    [routerLink]="[\'../\']">          </i>        }      }    </div>  }</div></div>'
+    var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'app-action-bar'},{'name': 'ActivitySkeletonComponent', 'selector': 'app-activity-skeleton'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminContentComponent', 'selector': 'app-admin-content'},{'name': 'AdminDraftCardComponent', 'selector': 'app-admin-draft-card'},{'name': 'AdminDraftComponent', 'selector': 'app-admin-draft'},{'name': 'AdminSidebarComponent', 'selector': 'app-admin-sidebar'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoryBoxComponent', 'selector': 'app-category-box'},{'name': 'ConditionsComponent', 'selector': 'app-conditions'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation'},{'name': 'ContentSearchComponent', 'selector': 'app-content-search'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CreateContentComponent', 'selector': 'app-create-content'},{'name': 'CreateFormComponent', 'selector': 'app-create-form'},{'name': 'CreateSidebarComponent', 'selector': 'app-create-sidebar'},{'name': 'DraftCardComponent', 'selector': 'app-draft-card'},{'name': 'DraftComponent', 'selector': 'app-draft'},{'name': 'DraftContentComponent', 'selector': 'app-draft-content'},{'name': 'DraftPreviewDialogComponent', 'selector': 'app-draft-preview'},{'name': 'DraftSidebarComponent', 'selector': 'app-draft-sidebar'},{'name': 'EditProfileDialogComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterGalleryComponent', 'selector': 'app-footer-gallery'},{'name': 'FooterNavComponent', 'selector': 'app-footer-nav'},{'name': 'FormErrorComponent', 'selector': 'app-form-error'},{'name': 'FriendsCardComponent', 'selector': 'app-friends-card'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HelpContentComponent', 'selector': 'app-help-content'},{'name': 'HelpHeaderComponent', 'selector': 'app-help-header'},{'name': 'HelpSidebarComponent', 'selector': 'app-help-sidebar'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeContentComponent', 'selector': 'app-home-content'},{'name': 'HomeSidebarComponent', 'selector': 'app-home-sidebar'},{'name': 'LogInDialogComponent', 'selector': 'app-log-in'},{'name': 'MainPostComponent', 'selector': 'app-main-post'},{'name': 'MinWidthComponent', 'selector': 'app-min-width'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NewsMasonryComponent', 'selector': 'app-news-masonry'},{'name': 'PostCardComponent', 'selector': 'app-post-card'},{'name': 'PostCardSkeletonComponent', 'selector': 'app-post-card-skeleton'},{'name': 'PostCarrouselComponent', 'selector': 'app-post-carrousel'},{'name': 'PostComponent', 'selector': 'app-post'},{'name': 'PostContentComponent', 'selector': 'app-post-content'},{'name': 'PostIndexComponent', 'selector': 'app-post-index'},{'name': 'PostIndexSkeletonComponent', 'selector': 'app-post-index-skeleton'},{'name': 'PostSidebarComponent', 'selector': 'app-post-sidebar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDraftsComponent', 'selector': 'app-profile-drafts'},{'name': 'ProfileFavoritesComponent', 'selector': 'app-profile-favorites'},{'name': 'ProfileFriendsComponent', 'selector': 'app-profile-friends'},{'name': 'ProfileFriendsContentComponent', 'selector': 'app-profile-friends-content'},{'name': 'ProfileFriendsSidebarComponent', 'selector': 'app-profile-friends-sidebar'},{'name': 'ProfileHeaderComponent', 'selector': 'app-profile-header'},{'name': 'ProfileHomeComponent', 'selector': 'app-profile-home'},{'name': 'ProfileHomeContentComponent', 'selector': 'app-profile-home-content'},{'name': 'ProfileHomeSidebarComponent', 'selector': 'app-profile-home-sidebar'},{'name': 'ProfilePostsComponent', 'selector': 'app-profile-posts'},{'name': 'ProfilePublicComponent', 'selector': 'app-profile-public'},{'name': 'ProfileSettingsComponent', 'selector': 'app-profile-settings'},{'name': 'ProfileSettingsContentComponent', 'selector': 'app-profile-settings-content'},{'name': 'ProfileSettingsSidebarComponent', 'selector': 'app-profile-settings-sidebar'},{'name': 'PushDeniedDialogComponent', 'selector': 'app-push-denied'},{'name': 'QuillHelpDialogComponent', 'selector': 'app-quill-help'},{'name': 'QuillToolbarComponent', 'selector': 'app-quill-toolbar'},{'name': 'RecentPostBoxComponent', 'selector': 'app-recent-post-box'},{'name': 'RecentPostSkeletonComponent', 'selector': 'app-recent-post-skeleton'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchBarComponent', 'selector': 'app-search-bar'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearhContentComponent', 'selector': 'app-searh-content'},{'name': 'SearhSidebarComponent', 'selector': 'app-searh-sidebar'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SignInComponent', 'selector': 'app-sign-in'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SloganComponent', 'selector': 'app-slogan'},{'name': 'SnackOverlayComponent', 'selector': 'app-snack'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StickyAsideComponent', 'selector': 'app-sticky-aside'},{'name': 'TextSliderComponent', 'selector': 'app-text-slider'}];
+    var DIRECTIVES = [{'name': 'NavDirective', 'selector': '[StickyNav]'},{'name': 'StickyDirective', 'selector': '[Sticky]'},{'name': 'TopDirective', 'selector': '[TopDirective]'}];
+    var ACTUAL_COMPONENT = {'name': 'QuillToolbarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'QuillToolbarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

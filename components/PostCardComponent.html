@@ -1,0 +1,2370 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>formatted-blog documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">formatted-blog documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PostCardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/layout/post/post-card/post-card.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-post-card</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./post-card.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./post-card.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#crafter" >crafter</a>
+                            </li>
+                            <li>
+                                <a href="#destroyRef" >destroyRef</a>
+                            </li>
+                            <li>
+                                <a href="#draftIcons" >draftIcons</a>
+                            </li>
+                            <li>
+                                <a href="#draftsFacade" >draftsFacade</a>
+                            </li>
+                            <li>
+                                <a href="#draftStatus" >draftStatus</a>
+                            </li>
+                            <li>
+                                <a href="#postFacade" >postFacade</a>
+                            </li>
+                            <li>
+                                <a href="#postIcons" >postIcons</a>
+                            </li>
+                            <li>
+                                <a href="#quillModules" >quillModules</a>
+                            </li>
+                            <li>
+                                <a href="#quillSrv" >quillSrv</a>
+                            </li>
+                            <li>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#shareSrv" >shareSrv</a>
+                            </li>
+                            <li>
+                                <a href="#switchObjDraft" >switchObjDraft</a>
+                            </li>
+                            <li>
+                                <a href="#switchObjPost" >switchObjPost</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                            <li>
+                                <a href="#userSrv" >userSrv</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#download" >download</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#editDraft" >editDraft</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#editPost" >editPost</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#editSuccess" >editSuccess</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#favorite" >favorite</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getUser" >getUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#goToAuthorProfile" >goToAuthorProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#message" >message</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#preview" >preview</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeFavorite" >removeFavorite</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#share" >share</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#alone" >alone</a>
+                            </li>
+                            <li>
+                                <a href="#border" >border</a>
+                            </li>
+                            <li>
+                                <a href="#favoritesID" >favoritesID</a>
+                            </li>
+                            <li>
+                                <a href="#isDraft" >isDraft</a>
+                            </li>
+                            <li>
+                                <a href="#last" >last</a>
+                            </li>
+                            <li>
+                                <a href="#post" >post</a>
+                            </li>
+                            <li>
+                                <a href="#showIntro" >showIntro</a>
+                            </li>
+                            <li>
+                                <a href="#small" >small</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="alone"></a>
+                        <b>alone</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="border"></a>
+                        <b>border</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:40</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="favoritesID"></a>
+                        <b>favoritesID</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:45</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDraft"></a>
+                        <b>isDraft</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="last"></a>
+                        <b>last</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:43</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="post"></a>
+                        <b>post</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Post.html" target="_self" >Post | undefined</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:39</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showIntro"></a>
+                        <b>showIntro</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:46</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="small"></a>
+                        <b>small</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Delete the selected {draft} by ID. Ask for confirmation.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="download"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>download</b></span>
+                        <a href="#download"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>download()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="123"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Download the  Post/Draft as HTML using {quillSrv.convertToHTML}</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editDraft"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>editDraft</b></span>
+                        <a href="#editDraft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editDraft()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Edit the selected {draft}. Excepts if status is pending.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editPost"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>editPost</b></span>
+                        <a href="#editPost"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editPost()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens a confirmation to edit the {post}
+Only works if the &#39;type&#39; is {POST_KEY}</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editSuccess"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>editSuccess</b></span>
+                        <a href="#editSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editSuccess()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="175"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:175</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Function to fire after edit {post} confirmation.
+Set &#39;temporal&#39; to the {post} and navigate to it.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="favorite"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>favorite</b></span>
+                        <a href="#favorite"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>favorite()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Add a Post/Draft to your favourites.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getUser</b></span>
+                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUser()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Get the current user from {userSrv}</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToAuthorProfile"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>goToAuthorProfile</b></span>
+                        <a href="#goToAuthorProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>goToAuthorProfile()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to author {post profile}</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="message"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>message</b></span>
+                        <a href="#message"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>message()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preview"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>preview</b></span>
+                        <a href="#preview"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>preview()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Open a dialog to preview the selected Post/Draft.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeFavorite"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>removeFavorite</b></span>
+                        <a href="#removeFavorite"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeFavorite()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Remove a Post/Draft from your favourites.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="share"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>share</b></span>
+                        <a href="#share"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>share()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:156</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens a native pop up for sharing the Post/Craft. HTML5.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="crafter"></a>
+                    <span class="name">
+                        <span ><b>crafter</b></span>
+                        <a href="#crafter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CrafterService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyRef"></a>
+                    <span class="name">
+                        <span ><b>destroyRef</b></span>
+                        <a href="#destroyRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(DestroyRef)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftIcons"></a>
+                    <span class="name">
+                        <span ><b>draftIcons</b></span>
+                        <a href="#draftIcons"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DRAFT_ICONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftsFacade"></a>
+                    <span class="name">
+                        <span ><b>draftsFacade</b></span>
+                        <a href="#draftsFacade"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(DraftsFacade)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draftStatus"></a>
+                    <span class="name">
+                        <span ><b>draftStatus</b></span>
+                        <a href="#draftStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DraftStatusEnum</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postFacade"></a>
+                    <span class="name">
+                        <span ><b>postFacade</b></span>
+                        <a href="#postFacade"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(PostsFacade)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postIcons"></a>
+                    <span class="name">
+                        <span ><b>postIcons</b></span>
+                        <a href="#postIcons"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>POST_ICONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillModules"></a>
+                    <span class="name">
+                        <span ><b>quillModules</b></span>
+                        <a href="#quillModules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QuillModules</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    syntax: true,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="quillSrv"></a>
+                    <span class="name">
+                        <span ><b>quillSrv</b></span>
+                        <a href="#quillSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(QuillService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="shareSrv"></a>
+                    <span class="name">
+                        <span ><b>shareSrv</b></span>
+                        <a href="#shareSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ShareService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchObjDraft"></a>
+                    <span class="name">
+                        <span ><b>switchObjDraft</b></span>
+                        <a href="#switchObjDraft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    edit: () &#x3D;&gt; this.editDraft(),
+    preview: () &#x3D;&gt; this.preview(),
+    download: () &#x3D;&gt; this.download(),
+    delete: () &#x3D;&gt; this.delete(),
+    favorite: () &#x3D;&gt; this.favorite()
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Object to map Draft icons to actions.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchObjPost"></a>
+                    <span class="name">
+                        <span ><b>switchObjPost</b></span>
+                        <a href="#switchObjPost"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    message: () &#x3D;&gt; this.message(),
+    download: () &#x3D;&gt; this.download(),
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Object to map Post icons to actions.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userSrv"></a>
+                    <span class="name">
+                        <span ><b>userSrv</b></span>
+                        <a href="#userSrv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(UserService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/layout/post/post-card/post-card.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ChangeDetectionStrategy, Input, DestroyRef, inject } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { filter } from &#x27;rxjs&#x27;;
+import { QuillModules } from &#x27;ngx-quill&#x27;;
+
+import { Post } from &#x27;@shared/types/interface.post&#x27;;
+import { DraftsFacade } from &#x27;@store/drafts/drafts.facade&#x27;;
+import { CrafterService } from &#x27;@core/services/crafter/crafter.service&#x27;;
+import { QuillService } from &#x27;@core/services/quill/quill.service&#x27;;
+import { PostsFacade } from &#x27;@core/ngrx/posts/posts.facade&#x27;;
+import { UserService } from &#x27;@core/services/api/users.service&#x27;;
+import { ShareService } from &#x27;@core/services/share/share.service&#x27;;
+import { User } from &#x27;@shared/types/interface.user&#x27;;
+
+import { DRAFT_ICONS, POST_ICONS } from &#x27;@shared/data/data&#x27;;
+import { DELETE_CONFIRMATION, EDIT_POST_CONFIRMATION, PREVIEW_DRAFT_DIALOG } from &#x27;@shared/data/dialogs&#x27;;
+import { CREATE_ROUTE, POST_KEY, PROFILE_ROUTE } from &#x27;@shared/data/constants&#x27;;
+import { DraftStatusEnum } from &#x27;@shared/types/types.enums&#x27;;
+import { takeUntilDestroyed } from &#x27;@angular/core/rxjs-interop&#x27;;
+
+@Component({
+  selector: &#x27;app-post-card&#x27;,
+  templateUrl: &#x27;./post-card.component.html&#x27;,
+  styleUrls: [&#x27;./post-card.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class PostCardComponent {
+
+  crafter &#x3D; inject(CrafterService);
+  draftsFacade &#x3D; inject(DraftsFacade);
+  router &#x3D; inject(Router);
+  quillSrv &#x3D; inject(QuillService);
+  postFacade &#x3D; inject(PostsFacade);
+  userSrv &#x3D; inject(UserService);
+  shareSrv &#x3D; inject(ShareService);
+  destroyRef &#x3D; inject(DestroyRef);
+
+  @Input() post: Post | undefined;
+  @Input() border &#x3D; true;
+  @Input() alone &#x3D; false;  // Single Post
+  @Input() small &#x3D; false;  // Small Card
+  @Input() last!: boolean;
+  @Input() isDraft!: boolean;  // Draft Card
+  @Input() favoritesID: string[] &#x3D; [];
+  @Input() showIntro: boolean &#x3D; true;
+
+  user: User | undefined;
+
+  postIcons &#x3D; POST_ICONS;
+  draftIcons &#x3D; DRAFT_ICONS;
+  draftStatus &#x3D; DraftStatusEnum;
+
+  quillModules: QuillModules &#x3D; {
+    syntax: true,
+  };
+
+  /**
+   * Object to map Draft icons to actions.
+  */
+  switchObjDraft: {[key: string]: () &#x3D;&gt; void} &#x3D; {
+    edit: () &#x3D;&gt; this.editDraft(),
+    preview: () &#x3D;&gt; this.preview(),
+    download: () &#x3D;&gt; this.download(),
+    delete: () &#x3D;&gt; this.delete(),
+    favorite: () &#x3D;&gt; this.favorite()
+  };
+
+  /**
+   * Object to map Post icons to actions.
+  */
+  switchObjPost: {[key: string]: () &#x3D;&gt; void} &#x3D; {
+    message: () &#x3D;&gt; this.message(),
+    download: () &#x3D;&gt; this.download(),
+  };
+
+  ngOnInit(): void { 
+    this.getUser();
+  }
+
+  /**
+   * Get the current user from {userSrv}
+  */
+  private getUser(): void {
+    this.user &#x3D; this.userSrv.getUser();
+  }
+
+  /**
+   * Edit the selected {draft}. Excepts if status is pending.
+  */
+  private editDraft(): void {
+    if (this.post.status &#x3D;&#x3D;&#x3D; DraftStatusEnum.PENDING) { return; }
+    this.draftsFacade.setActive(this.post);
+    this.router.navigateByUrl(CREATE_ROUTE);
+  }
+
+  /**
+   * Opens a confirmation to edit the {post}
+   * Only works if the &#x27;type&#x27; is {POST_KEY}
+  */
+    public editPost(): void {
+      if (this.post.type !&#x3D;&#x3D; POST_KEY) { return; }
+  
+      this.crafter.confirmation(EDIT_POST_CONFIRMATION)
+      .afterClosed()
+        .pipe(
+          takeUntilDestroyed(this.destroyRef),
+          filter(Boolean)
+      ).subscribe(_ &#x3D;&gt; this.editSuccess());
+    }
+
+  /**
+   * Open a dialog to preview the selected Post/Draft.
+  */
+  private preview(): void {
+    this.draftsFacade.setPreview(this.post);
+    this.crafter.dialog(PREVIEW_DRAFT_DIALOG);
+  }
+
+  /**
+   * Download the  Post/Draft as HTML using {quillSrv.convertToHTML}
+  */
+  private download(): void {
+    this.quillSrv.convertToHTML(this.post);
+  }
+
+  /**
+   * Add a Post/Draft to your favourites.
+  */
+  public favorite(): void {
+    this.postFacade.addFavorite(this.post._id);
+  }
+
+  /**
+   * Remove a Post/Draft from your favourites.
+  */
+  public removeFavorite(): void {
+    this.postFacade.removeFavorite(this.post._id);
+  }
+
+  /**
+   * Delete the selected {draft} by ID. Ask for confirmation.
+  */
+  private delete(): void {
+    this.crafter.confirmation(DELETE_CONFIRMATION)
+     ?.afterClosed()
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        filter(Boolean)
+    ).subscribe(_ &#x3D;&gt; this.draftsFacade.delete(this.post._id));
+  }
+
+  /**
+   * Opens a native pop up for sharing the Post/Craft. HTML5.
+  */
+  public async share(): Promise&lt;void&gt; {
+    await this.shareSrv.share(this.post).catch(err &#x3D;&gt; console.log(err));
+  }
+
+  private message(): void {
+    console.log(&#x27;message&#x27;);
+  }
+
+  /**
+   * Navigates to author {post profile}
+  */
+  public goToAuthorProfile(): void {
+    this.router.navigateByUrl(PROFILE_ROUTE + &#x27;/&#x27; + this.post.user);
+  }
+
+  /**
+   * Function to fire after edit {post} confirmation.
+   * Set &#x27;temporal&#x27; to the {post} and navigate to it.
+  */
+  private editSuccess(): void {
+    this.post.temporal &#x3D; true;
+    this.draftsFacade.setActive(this.post);
+    this.draftsFacade.addTemporal(this.post);
+    this.router.navigate([CREATE_ROUTE], {replaceUrl: true});
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">@defer(when post) {
+  &lt;article class&#x3D;&quot;default&quot; 
+          [ngClass]&#x3D;&quot;{
+                    &#x27;alone&#x27;: alone, 
+                    &#x27;small&#x27;: small, 
+                    &#x27;last&#x27;: last
+                  }&quot;&gt;
+    &lt;figure&gt;
+      &lt;img [src]&#x3D;&quot;post.cover&quot; 
+          [routerLink]&#x3D;&quot;isDraft ? &#x27;/draft/&#x27; + post.slug : null&quot; 
+          alt&#x3D;&quot;Post Image&quot; 
+          #img
+          (error)&#x3D;&quot;img.src &#x3D; &#x27;assets/images/placeholder.png&#x27;&quot; img.alt&#x3D;&#x27;No Image&#x27; /&gt;
+      &lt;!-- HOVER --&gt;
+      @if(!isDraft &amp;&amp; !alone) {
+      &lt;div class&#x3D;&quot;inner&quot;&gt;
+        &lt;div class&#x3D;&quot;content&quot;&gt;
+          &lt;span (click)&#x3D;&quot;share()&quot;&gt;&lt;i class&#x3D;&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+          &lt;span [routerLink]&#x3D;&quot;&#x27;/post/&#x27; + post.slug&quot;&gt;
+            &lt;i class&#x3D;&quot;fas fa-search&quot;&gt;&lt;/i&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      }
+    &lt;/figure&gt;
+    &lt;!-- CONTENT --&gt;
+    &lt;div class&#x3D;&quot;main-content&quot;&gt;
+      &lt;p class&#x3D;&quot;category&quot;&gt;{{post.category}}&lt;/p&gt;
+      &lt;h1 [routerLink]&#x3D;&quot;isDraft ? (&#x27;/draft/&#x27; + post.slug) : (&#x27;/post/&#x27; + post.slug)&quot;&gt;{{post.title}}&lt;/h1&gt;
+
+      @if(!small) {
+      &lt;p class&#x3D;&quot;date&quot;&gt;
+        &lt;!-- DRAFT STATUS --&gt;
+        @if(isDraft) {
+          &lt;span [class]&#x3D;&quot;post.status&quot;&gt;{{post.status | draftStatus}} &lt;/span&gt;
+          &lt;span class&#x3D;&quot;tale&quot;&gt;-&lt;/span&gt;
+        }
+        &lt;span&gt;{{post.createdAt | date}}&lt;/span&gt;
+      &lt;/p&gt;
+      }
+
+      @if(alone) {
+        &lt;!-- FULL MESSAGE --&gt;
+        @defer (when post.message) {
+          &lt;div class&#x3D;&quot;alone-intro&quot; [innerHTML]&#x3D;&quot;post.intro | shortMessage: alone&quot;&gt;&lt;/div&gt;
+          &lt;quill-view [content]&#x3D;&quot;post.message&quot; [modules]&#x3D;&quot;quillModules&quot; class&#x3D;&quot;alone&quot; /&gt;
+        }
+      } @else {
+        &lt;div [ngClass]&#x3D;&quot;{&#x27;intro&#x27;: !!post.intro}&quot;
+          [innerHTML]&#x3D;&quot;(post.intro | shortMessage: false : small : showIntro) | Sanitizer: &#x27;html&#x27;&quot;&gt;
+        &lt;/div&gt;
+      }
+      &lt;!-- BOTTOM --&gt;
+      &lt;div class&#x3D;&quot;bottom&quot; [ngClass]&#x3D;&quot;{&#x27;first&#x27;: border}&quot;&gt;
+        @if(small) {
+          &lt;div&gt;
+            &lt;p class&#x3D;&quot;date&quot;&gt;
+              @if(isDraft) {
+              &lt;span [class]&#x3D;&quot;post.status&quot;&gt;{{post.status | draftStatus}} &lt;/span&gt;
+              &lt;span class&#x3D;&quot;tale&quot;&gt;-&lt;/span&gt;
+              }
+              &lt;span&gt;{{post.createdAt | date}}&lt;/span&gt;
+            &lt;/p&gt;
+            &lt;span class&#x3D;&quot;author&quot; (click)&#x3D;&quot;goToAuthorProfile()&quot;&gt;{{post.author}}&lt;/span&gt;
+          &lt;/div&gt;
+        } @else {
+          &lt;span class&#x3D;&quot;author&quot; (click)&#x3D;&quot;goToAuthorProfile()&quot;&gt;{{post.author}}&lt;/span&gt;
+        }
+        &lt;!-- ICONS --&gt;
+        &lt;ul [ngClass]&#x3D;&quot;{&#x27;small&#x27;: small}&quot;&gt;
+          &lt;!-- DRAFT ICONS --&gt;
+          @if(isDraft) {
+            @for(item of draftIcons; track item.icon) {
+              &lt;li (click)&#x3D;&quot;switchObjDraft[item.action]()&quot;&gt;
+                &lt;i [class]&#x3D;&quot;item.icon&quot; 
+                   [matTooltip]&#x3D;&quot;item.label&quot; 
+                   [ngClass]&#x3D;&quot;{&#x27;hide&#x27;: item.action &#x3D;&#x3D;&#x3D; &#x27;edit&#x27; &amp;&amp; 
+                                       post.status &#x3D;&#x3D;&#x3D; draftStatus.PENDING}&quot;&gt;
+                &lt;/i&gt;
+              &lt;/li&gt;
+            }
+            &lt;!-- FAVORITE --&gt;
+            &lt;li&gt;
+              @if(favoritesID?.includes(post._id)) {
+                &lt;i class&#x3D;&quot;fas fa-star favorite&quot; 
+                  (click)&#x3D;&quot;removeFavorite()&quot; 
+                  [matTooltip]&#x3D;&quot;&#x27;Eliminar favorito&#x27;&quot;&gt;
+                &lt;/i&gt;
+              } @else {
+                &lt;i class&#x3D;&quot;far fa-star&quot; 
+                  (click)&#x3D;&quot;favorite()&quot; 
+                  [matTooltip]&#x3D;&quot;&#x27;Añadir favorito&#x27;&quot;&gt;
+                &lt;/i&gt;
+              }
+            &lt;/li&gt;
+          } @else {
+            &lt;!-- SHARE --&gt;
+            @if(alone) {
+              &lt;li (click)&#x3D;&quot;share()&quot;&gt;
+                &lt;i class&#x3D;&quot;fas fa-link&quot; [matTooltip]&#x3D;&quot;&#x27;Compartir&#x27;&quot;&gt;&lt;/i&gt;
+              &lt;/li&gt;
+            }
+            &lt;!-- EDIT --&gt;
+            @if(post.user &#x3D;&#x3D;&#x3D; user?._id) {
+              &lt;li (click)&#x3D;&quot;editPost()&quot;&gt;
+                &lt;i class&#x3D;&quot;fas fa-pen-fancy&quot; [matTooltip]&#x3D;&quot;&#x27;Editar&#x27;&quot;&gt;&lt;/i&gt;
+              &lt;/li&gt;
+            }
+            &lt;!-- ADD FRIEND --&gt;
+            @if(post.user !&#x3D;&#x3D; user?._id) {
+              &lt;li (click)&#x3D;&quot;goToAuthorProfile()&quot;&gt;
+                &lt;i class&#x3D;&quot;fas fa-user-plus&quot; [matTooltip]&#x3D;&quot;&#x27;Añadir&#x27;&quot;&gt;&lt;/i&gt;
+              &lt;/li&gt;
+            }
+
+            @for(item of postIcons; track item.icon) {
+              &lt;li (click)&#x3D;&quot;switchObjPost[item.action]()&quot; [ngClass]&#x3D;&quot;{
+                          &#x27;hide&#x27;: (item.action &#x3D;&#x3D;&#x3D; &#x27;download&#x27; &amp;&amp; !alone) || 
+                                  (item.action &#x3D;&#x3D;&#x3D; &#x27;message&#x27; &amp;&amp; post.user &#x3D;&#x3D;&#x3D; user?._id)
+                          }&quot;&gt;
+                &lt;i [class]&#x3D;&quot;item.icon&quot; [matTooltip]&#x3D;&quot;item.label&quot;&gt;&lt;/i&gt;
+              &lt;/li&gt;
+            }
+            &lt;!-- FAVORITE --&gt;
+            &lt;li&gt;
+              @if(favoritesID?.includes(post._id)) {
+                &lt;i class&#x3D;&quot;fas fa-star favorite&quot; 
+                  (click)&#x3D;&quot;removeFavorite()&quot; 
+                  [matTooltip]&#x3D;&quot;&#x27;Eliminar favorito&#x27;&quot;&gt;
+                &lt;/i&gt;
+              } @else {
+                &lt;i class&#x3D;&quot;far fa-star&quot; 
+                  (click)&#x3D;&quot;favorite()&quot; 
+                  [matTooltip]&#x3D;&quot;&#x27;Añadir favorito&#x27;&quot;&gt;
+                &lt;/i&gt;
+              }
+            &lt;/li&gt;
+          }
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./post-card.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;mixins/mixins.scss&#x27;;
+
+article {
+  &amp; figure {
+    overflow: hidden;
+    margin: 0 0 40px;
+    position: relative;
+
+    &amp; img {
+      display: block;
+      position: relative;
+      z-index: 1;
+      max-width: 100%;
+      width: 100%;
+      border: 0;
+      aspect-ratio: 870/450;
+      object-fit: cover;
+    }
+
+    &amp; .inner {
+      left: 0;
+      top: 0;
+      opacity: 0; // Hide
+      width: 100%;
+      padding: 20px;
+      height: 100%;
+      position: absolute;
+      visibility: hidden;
+      z-index: 2;
+
+      &amp; .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--inner-border);
+
+        &amp; span {
+          width: 40px;
+          height: 40px;
+          margin: -30px -41px 0 0;
+          color: var(--text-color);
+          background: var(--transparent-bg);
+          display: block;
+          text-align: center;
+          position: absolute;
+          top: 20%;
+          left: auto;
+          right: 50%;
+          border: 1px solid var(--border-color);
+          transition: all 300ms ease-in-out;
+          @include hover(1.5, var(--contrast-color));
+
+          &amp;:first-child {
+            top: 80%;
+            left: 50%;
+            margin: -30px 0 0 -41px;
+          }
+
+          &amp; i {
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+
+            &amp;.favorite {
+              color: var(--contrast-color);
+            }
+          }
+        }
+      }
+    }
+
+    &amp;:hover {
+      cursor: pointer;
+      &amp; .inner {
+        visibility: visible;
+        opacity: 1;
+        z-index: 2;
+        &amp; .content span { top: 50%}
+      }
+    }
+
+    @media(max-width: 550px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &amp;.default {
+    &amp;.alone {
+      &amp; .main-content {
+        &amp; .bottom {
+          @media(min-width: 993px) { margin-top: 1.5rem }
+          @media (max-width: 992px) { margin-bottom: 30px }
+        }
+      }
+    }
+
+    &amp; .main-content {
+      &amp; h1 {
+        line-height: 30px;
+        @media (max-width: 820px) { margin: 0 auto 20px }
+
+        @media (max-width: 550px) { 
+          width: 100%;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &amp; .main-content {
+    position: relative;
+
+    &amp; .category {
+      overflow: hidden;
+      padding: 0 0 5px;
+      font-style: italic;
+      font-family: &#x27;Merriweather&#x27;, Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      opacity: .9;
+      color: var(--contrast-color);
+      transition: color 666ms ease-in-out;
+      cursor: pointer;
+
+      @media(max-width: 550px) {
+        padding-bottom: 10px;
+      }
+    }
+
+    &amp; h1 {
+      text-transform: uppercase;
+      margin: 0 0 20px;
+      line-height: 22px;
+      font-size: 22px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      @include hover();
+    }
+
+    &amp; .date {
+      color: var(--date-color);
+      overflow: hidden;
+      padding: 0 0 20px;
+      font-style: italic;
+      font-family: &#x27;Merriweather&#x27;, Arial, Helvetica, sans-serif;
+
+      &amp; span:not(.tale) {
+        position: relative;
+        font-size: 15px;
+
+        @media(max-width: 550px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &amp; .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-bottom 666ms ease-in-out;
+      margin-top: 1.2rem;
+      padding: 20px 0 0;
+
+      &amp;.first { 
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 40px;
+        padding-bottom: 35px;
+      }
+
+      &amp; ul {
+        left: -8px;
+        position: relative;
+
+        &amp; li {
+          width: 32px;
+          display: inline-block;
+          list-style: none;
+
+          &amp; i {
+            display: block;
+            height: 18px;
+            line-height: 15px;
+            text-align: center;
+            position: relative;
+            font-size: 15px;
+            @include hover(1.5, var(--contrast-color));
+            &amp;.fa-envelope { top: 1px; }
+            &amp;.fa-user-plus { top: -1px; }
+
+            &amp;.favorite {
+              transition: color 666ms ease-in-out;
+              color: var(--contrast-color);
+
+              &amp;:hover {
+                filter: brightness(1.2);
+              }
+            }
+          }
+        }
+
+        &amp;.small {
+          top: 13px;
+        }
+
+        &amp; .hide {
+          display: none;
+        }
+      }
+
+      &amp; .author {
+        color: var(--text-color);
+        text-align: center;
+        padding: 0;
+        font-style: italic;
+        font-family: &#x27;Merriweather&#x27;, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        position: relative;
+        transition: color 666ms ease-in-out;
+        cursor: pointer;
+
+        &amp;::after {
+          content: &quot;&quot;;
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          width: 70px;
+          display: block;
+          height: 1px;
+          background: var(--contrast-color);
+          transition: background 666ms ease-in-out;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+// SMALL CARD
+  &amp;.small {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+    &amp;.last { margin-bottom: 0 }
+
+    @media (max-width: 750px) { 
+      grid-template-columns: 1fr;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 751px) and (max-width: 992px) { 
+      &amp; .main-content {
+        &amp; .date {
+          position: absolute;
+          bottom: 25px;
+        }
+      }
+    }
+    
+    &amp; figure {
+      margin: 0;
+
+      &amp;:hover {
+        &amp; .inner {
+          &amp; .content span {
+            @media(min-width: 751px) { top: 55% }
+          }
+        }
+      }
+
+      @media (min-width: 550px) and (max-width: 750px) {
+        &amp; .inner .content span {
+          width: 60px;
+          height: 60px;
+          margin: -30px -62px 0 0;
+  
+          &amp;:first-child { margin: -30px 0 0 -62px }
+  
+          &amp; i {
+            line-height: 60px;
+            font-size: 25px;
+            
+          }
+        }
+      } 
+
+      &amp; img { height: 100% }
+    }
+
+    &amp; .main-content {
+      &amp; .date {
+        padding: 0;
+        position: relative;
+        top: 2px;
+
+        &amp; span:not(.tale) {
+          padding-left: 0;
+          font-size: 12px;
+        }
+
+        @media (max-width: 1200px) { padding: 0 }
+      }
+
+      &amp; h1, &amp; .category, &amp; .date { text-align: left }
+
+      &amp; h1 {
+        font-size: 20px;
+        line-height: initial;
+
+        @media (min-width: 993px) and 
+               (max-width: 1200px) { margin: 0 0 10px }
+        @media (max-width: 1200px) { font-size: 18px }
+        @media (max-width: 750px) { padding-right: 1rem }
+      }
+
+      &amp; .bottom {
+        padding: 0;
+        position: absolute;
+        bottom: -3px;
+        width: 100%;
+        top: initial;
+
+        @media (max-width: 750px) {
+          top: 0;
+          position: relative;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
+
+article:not(.small) {
+  &amp; figure .inner .content span {
+    @media (min-width: 549px) {
+      width: 60px;
+      height: 60px;
+      margin: -30px -62px 0 0;
+
+      &amp; i {
+        line-height: 60px;
+        font-size: 25px;
+      } 
+  
+      &amp;:first-child { margin: -30px 0 0 -62px }
+    }
+  }
+
+  &amp;.alone .main-content {
+    &amp; .date { 
+      padding: 0 0 40px;
+
+      @media(max-width: 550px) {
+        padding: 0 0 20px;
+      }
+    }
+  }
+}
+
+.intro {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+
+  @media(min-width: 1200px) {
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+  }
+}
+
+.alone-intro {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+@media(max-width: 992px) and (min-width: 751px) {
+  article.small .intro {
+    display: none;
+  }
+}
+
+@media(max-width: 750px) {
+  .intro {
+    margin-bottom: 20px;
+  }
+}
+
+
+@media(max-width: 550px) {
+  .intro, .alone-intro  {
+    font-size: 13px;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>@defer(when post) {  <article class="default"           [ngClass]="{                    \'alone\': alone,                     \'small\': small,                     \'last\': last                  }">    <figure>      <img [src]="post.cover"           [routerLink]="isDraft ? \'/draft/\' + post.slug : null"           alt="Post Image"           #img          (error)="img.src = \'assets/images/placeholder.png\'" img.alt=\'No Image\' />      <!-- HOVER -->      @if(!isDraft && !alone) {      <div class="inner">        <div class="content">          <span (click)="share()"><i class="fas fa-link"></i></span>          <span [routerLink]="\'/post/\' + post.slug">            <i class="fas fa-search"></i>          </span>        </div>      </div>      }    </figure>    <!-- CONTENT -->    <div class="main-content">      <p class="category">{{post.category}}</p>      <h1 [routerLink]="isDraft ? (\'/draft/\' + post.slug) : (\'/post/\' + post.slug)">{{post.title}}</h1>      @if(!small) {      <p class="date">        <!-- DRAFT STATUS -->        @if(isDraft) {          <span [class]="post.status">{{post.status | draftStatus}} </span>          <span class="tale">-</span>        }        <span>{{post.createdAt | date}}</span>      </p>      }      @if(alone) {        <!-- FULL MESSAGE -->        @defer (when post.message) {          <div class="alone-intro" [innerHTML]="post.intro | shortMessage: alone"></div>          <quill-view [content]="post.message" [modules]="quillModules" class="alone" />        }      } @else {        <div [ngClass]="{\'intro\': !!post.intro}"          [innerHTML]="(post.intro | shortMessage: false : small : showIntro) | Sanitizer: \'html\'">        </div>      }      <!-- BOTTOM -->      <div class="bottom" [ngClass]="{\'first\': border}">        @if(small) {          <div>            <p class="date">              @if(isDraft) {              <span [class]="post.status">{{post.status | draftStatus}} </span>              <span class="tale">-</span>              }              <span>{{post.createdAt | date}}</span>            </p>            <span class="author" (click)="goToAuthorProfile()">{{post.author}}</span>          </div>        } @else {          <span class="author" (click)="goToAuthorProfile()">{{post.author}}</span>        }        <!-- ICONS -->        <ul [ngClass]="{\'small\': small}">          <!-- DRAFT ICONS -->          @if(isDraft) {            @for(item of draftIcons; track item.icon) {              <li (click)="switchObjDraft[item.action]()">                <i [class]="item.icon"                    [matTooltip]="item.label"                    [ngClass]="{\'hide\': item.action === \'edit\' &&                                        post.status === draftStatus.PENDING}">                </i>              </li>            }            <!-- FAVORITE -->            <li>              @if(favoritesID?.includes(post._id)) {                <i class="fas fa-star favorite"                   (click)="removeFavorite()"                   [matTooltip]="\'Eliminar favorito\'">                </i>              } @else {                <i class="far fa-star"                   (click)="favorite()"                   [matTooltip]="\'Añadir favorito\'">                </i>              }            </li>          } @else {            <!-- SHARE -->            @if(alone) {              <li (click)="share()">                <i class="fas fa-link" [matTooltip]="\'Compartir\'"></i>              </li>            }            <!-- EDIT -->            @if(post.user === user?._id) {              <li (click)="editPost()">                <i class="fas fa-pen-fancy" [matTooltip]="\'Editar\'"></i>              </li>            }            <!-- ADD FRIEND -->            @if(post.user !== user?._id) {              <li (click)="goToAuthorProfile()">                <i class="fas fa-user-plus" [matTooltip]="\'Añadir\'"></i>              </li>            }            @for(item of postIcons; track item.icon) {              <li (click)="switchObjPost[item.action]()" [ngClass]="{                          \'hide\': (item.action === \'download\' && !alone) ||                                   (item.action === \'message\' && post.user === user?._id)                          }">                <i [class]="item.icon" [matTooltip]="item.label"></i>              </li>            }            <!-- FAVORITE -->            <li>              @if(favoritesID?.includes(post._id)) {                <i class="fas fa-star favorite"                   (click)="removeFavorite()"                   [matTooltip]="\'Eliminar favorito\'">                </i>              } @else {                <i class="far fa-star"                   (click)="favorite()"                   [matTooltip]="\'Añadir favorito\'">                </i>              }            </li>          }        </ul>      </div>    </div>  </article>}</div>'
+    var COMPONENTS = [{'name': 'ActionBarComponent', 'selector': 'app-action-bar'},{'name': 'ActivitySkeletonComponent', 'selector': 'app-activity-skeleton'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminContentComponent', 'selector': 'app-admin-content'},{'name': 'AdminDraftCardComponent', 'selector': 'app-admin-draft-card'},{'name': 'AdminDraftComponent', 'selector': 'app-admin-draft'},{'name': 'AdminSidebarComponent', 'selector': 'app-admin-sidebar'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoryBoxComponent', 'selector': 'app-category-box'},{'name': 'ConditionsComponent', 'selector': 'app-conditions'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation'},{'name': 'ContentSearchComponent', 'selector': 'app-content-search'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CreateContentComponent', 'selector': 'app-create-content'},{'name': 'CreateFormComponent', 'selector': 'app-create-form'},{'name': 'CreateSidebarComponent', 'selector': 'app-create-sidebar'},{'name': 'DraftCardComponent', 'selector': 'app-draft-card'},{'name': 'DraftComponent', 'selector': 'app-draft'},{'name': 'DraftContentComponent', 'selector': 'app-draft-content'},{'name': 'DraftPreviewDialogComponent', 'selector': 'app-draft-preview'},{'name': 'DraftSidebarComponent', 'selector': 'app-draft-sidebar'},{'name': 'EditProfileDialogComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterGalleryComponent', 'selector': 'app-footer-gallery'},{'name': 'FooterNavComponent', 'selector': 'app-footer-nav'},{'name': 'FormErrorComponent', 'selector': 'app-form-error'},{'name': 'FriendsCardComponent', 'selector': 'app-friends-card'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HelpContentComponent', 'selector': 'app-help-content'},{'name': 'HelpHeaderComponent', 'selector': 'app-help-header'},{'name': 'HelpSidebarComponent', 'selector': 'app-help-sidebar'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeContentComponent', 'selector': 'app-home-content'},{'name': 'HomeSidebarComponent', 'selector': 'app-home-sidebar'},{'name': 'LogInDialogComponent', 'selector': 'app-log-in'},{'name': 'MainPostComponent', 'selector': 'app-main-post'},{'name': 'MinWidthComponent', 'selector': 'app-min-width'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NewsMasonryComponent', 'selector': 'app-news-masonry'},{'name': 'PostCardComponent', 'selector': 'app-post-card'},{'name': 'PostCardSkeletonComponent', 'selector': 'app-post-card-skeleton'},{'name': 'PostCarrouselComponent', 'selector': 'app-post-carrousel'},{'name': 'PostComponent', 'selector': 'app-post'},{'name': 'PostContentComponent', 'selector': 'app-post-content'},{'name': 'PostIndexComponent', 'selector': 'app-post-index'},{'name': 'PostIndexSkeletonComponent', 'selector': 'app-post-index-skeleton'},{'name': 'PostSidebarComponent', 'selector': 'app-post-sidebar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDraftsComponent', 'selector': 'app-profile-drafts'},{'name': 'ProfileFavoritesComponent', 'selector': 'app-profile-favorites'},{'name': 'ProfileFriendsComponent', 'selector': 'app-profile-friends'},{'name': 'ProfileFriendsContentComponent', 'selector': 'app-profile-friends-content'},{'name': 'ProfileFriendsSidebarComponent', 'selector': 'app-profile-friends-sidebar'},{'name': 'ProfileHeaderComponent', 'selector': 'app-profile-header'},{'name': 'ProfileHomeComponent', 'selector': 'app-profile-home'},{'name': 'ProfileHomeContentComponent', 'selector': 'app-profile-home-content'},{'name': 'ProfileHomeSidebarComponent', 'selector': 'app-profile-home-sidebar'},{'name': 'ProfilePostsComponent', 'selector': 'app-profile-posts'},{'name': 'ProfilePublicComponent', 'selector': 'app-profile-public'},{'name': 'ProfileSettingsComponent', 'selector': 'app-profile-settings'},{'name': 'ProfileSettingsContentComponent', 'selector': 'app-profile-settings-content'},{'name': 'ProfileSettingsSidebarComponent', 'selector': 'app-profile-settings-sidebar'},{'name': 'PushDeniedDialogComponent', 'selector': 'app-push-denied'},{'name': 'QuillHelpDialogComponent', 'selector': 'app-quill-help'},{'name': 'QuillToolbarComponent', 'selector': 'app-quill-toolbar'},{'name': 'RecentPostBoxComponent', 'selector': 'app-recent-post-box'},{'name': 'RecentPostSkeletonComponent', 'selector': 'app-recent-post-skeleton'},{'name': 'ScrollTopComponent', 'selector': 'app-scroll-top'},{'name': 'SearchBarComponent', 'selector': 'app-search-bar'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SearhContentComponent', 'selector': 'app-searh-content'},{'name': 'SearhSidebarComponent', 'selector': 'app-searh-sidebar'},{'name': 'SectionComponent', 'selector': 'app-section'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SignInComponent', 'selector': 'app-sign-in'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'SloganComponent', 'selector': 'app-slogan'},{'name': 'SnackOverlayComponent', 'selector': 'app-snack'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StickyAsideComponent', 'selector': 'app-sticky-aside'},{'name': 'TextSliderComponent', 'selector': 'app-text-slider'}];
+    var DIRECTIVES = [{'name': 'NavDirective', 'selector': '[StickyNav]'},{'name': 'StickyDirective', 'selector': '[Sticky]'},{'name': 'TopDirective', 'selector': '[TopDirective]'}];
+    var ACTUAL_COMPONENT = {'name': 'PostCardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PostCardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

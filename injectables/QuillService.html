@@ -1,0 +1,688 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>formatted-blog documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">formatted-blog documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >QuillService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/quill/quill.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addStyles" >addStyles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#convertToHTML" >convertToHTML</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(crafter: <a href="../injectables/CrafterService.html" target="_self">CrafterService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/services/quill/quill.service.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>crafter</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CrafterService.html" target="_self" >CrafterService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addStyles"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addStyles</b></span>
+                        <a href="#addStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addStyles(html: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, post: <a href="../interfaces/Post.html" target="_self">Post</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/core/services/quill/quill.service.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>html</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>post</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Post.html" target="_self" >Post</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertToHTML"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>convertToHTML</b></span>
+                        <a href="#convertToHTML"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertToHTML(post: <a href="../interfaces/Post.html" target="_self">Post</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/core/services/quill/quill.service.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>post</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Post.html" target="_self" >Post</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Post } from &#x27;@shared/types/interface.post&#x27;;
+import { QuillDeltaToHtmlConverter } from &#x27;quill-delta-to-html&#x27;;
+import { CrafterService } from &#x27;../crafter/crafter.service&#x27;;
+import { ERROR_CONVERT_HTML_SENTENCE, NO_DATA_CONVERT_HTML_SENTENCE } from &#x27;@shared/data/sentences&#x27;;
+import { APP_CONSTANTS } from &#x27;app/app.config&#x27;;
+import { SnackTypeEnum } from &#x27;@shared/types/types.enums&#x27;;
+
+@Injectable()
+
+export class QuillService {
+
+  constructor(private crafter: CrafterService) { }
+
+  public convertToHTML(post: Post): void {
+    if (!post.message.ops) {
+      this.crafter.setSnack(NO_DATA_CONVERT_HTML_SENTENCE, SnackTypeEnum.WARNING);
+      return;
+    }
+
+    const converted &#x3D; new QuillDeltaToHtmlConverter(post.message.ops, {
+      multiLineParagraph: false
+    }).convert();
+
+    try {
+      const parser &#x3D; new DOMParser();
+      const input &#x3D; document.createElement(&#x27;a&#x27;);
+      const doc &#x3D; parser.parseFromString(converted, &quot;text/html&quot;);
+      const styled &#x3D; this.addStyles(doc.documentElement.outerHTML, post);
+      input.setAttribute(&#x27;href&#x27;, &#x27;data:html; charset&#x3D;utf-8,&#x27; + styled)
+      input.setAttribute(&#x27;download&#x27;, &#x60;${post.title}.html&#x60;);
+      input.click();
+    } catch (err) {
+      this.crafter.setSnack(ERROR_CONVERT_HTML_SENTENCE, SnackTypeEnum.ERROR);
+    }
+  }
+
+  private addStyles(html: string, post: Post): string {
+    return html.replace(&#x27;&lt;body&gt;&#x27;, addTitle(post))
+               .replace(&#x27;&lt;head&gt;&lt;/head&gt;&#x27;, POST_STYLES_STRING)
+               .replace(&#x27;&lt;/body&gt;&#x27;, addFooter());
+  }
+
+}
+
+const addTitle &#x3D; (post: Post) &#x3D;&gt; 
+&#x60;&lt;body&gt;
+  &lt;div id&#x3D;&quot;draft&quot; style&#x3D;&quot;width: 100%&quot;&gt;
+    &lt;h1&gt;${post.title}&lt;/h1&gt;
+    &lt;span class&#x3D;&quot;title&quot;&gt;Escrito por ${post.author}&lt;/span&gt;
+    &lt;img onerror&#x3D;&quot;this.src&#x3D;&#x27;https://th.bing.com/th/id/OIP.vDf037OKUo0H03weRxdWuAHaHa?pid&#x3D;ImgDet&amp;rs&#x3D;1&#x27;&quot; alt&#x3D;&quot;Post Image&quot; src&#x3D;&quot;${post.cover}&quot;/&gt;&#x60;;
+
+const addFooter &#x3D; () &#x3D;&gt; &#x60;  
+  &lt;/div&gt;
+  &lt;footer&gt;
+      &lt;b&gt;The Formatted Blog&lt;/b&gt;. 
+      Copyright © ${new Date().getFullYear().toString()} - 
+      All Rights Reserved - ${APP_CONSTANTS.APP_VERSION}
+  &lt;/footer&gt;
+&lt;/body&gt;&#x60;;
+
+const POST_STYLES_STRING &#x3D; &#x60;
+&lt;head&gt;
+  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.css&quot; crossorigin&#x3D;&quot;anonymous&quot; referrerpolicy&#x3D;&quot;no-referrer&quot; /&gt;
+  &lt;link href&#x3D;&quot;https://fonts.googleapis.com/css2?family&#x3D;Raleway&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
+  &lt;style&gt;
+  
+  /*****************************************************************/
+  /* CUSTOM STYLES - DO NOT EDIT TO KEEP SAME FORMATTED BLOG STYLE */
+  /*****************************************************************/
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      max-width: 950px;
+      margin: 0 auto;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+
+    p, ul, ol, span.title, h1, h2, h3, footer {
+      font-family: &#x27;Raleway&#x27;, sans-serif;
+    }
+    
+    p {
+      margin: 0 0 30px;
+      text-align: left;
+    }
+
+    blockquote {
+      margin: 36px 0 35px;
+      background: rgb(255, 253, 189);
+      padding: 15px 22px 15px 25px;
+      transition: background 666ms ease-in-out;
+      font-style: italic;
+      font-size: 16px;
+      border-left: 5px solid rgb(0, 28, 155);
+      color: rgb(59, 57, 57);
+    }
+
+    blockquote:first-child { margin-top: 0; }
+
+    ul {
+      margin: 36px 0 35px;
+      list-style: none;
+    }
+  
+    ul li {
+      margin: 12px 0;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    ul li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: &quot;Font Awesome 5 Free&quot;;
+      font-weight: 900;
+      content: &quot;\\f0da&quot;;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-size: 20px;
+      color: rgb(0, 28, 155);
+    }
+  
+    ul:first-child { margin-top: 0 }
+
+    ol {
+      counter-reset: my-counter;
+      margin: 36px 0 35px;
+      list-style: none;
+    }
+
+    ol:first-child { margin-top: 0 }
+
+    ol li {
+      margin: 12px 0;
+      position: relative;
+      padding-left: 27px;
+      counter-increment: my-counter;
+    }
+
+    ol li::before {
+      content: counter(my-counter);
+      position: absolute;
+      left: 0;
+      top: -2px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-size: 20px;
+      color: rgb(0, 28, 155);
+    }
+
+    span.title {
+      font-size: 11px;
+      opacity: .8;
+      margin-bottom: 12px;
+      display: inline-block;
+      padding-left: 3px;
+    }
+
+    h1 {
+      margin: 28px 0 2px 0;
+    }
+
+    h2 {
+      margin: 45px 0 30px 0;
+      position: relative;
+      scroll-margin-top: 30px;
+    }
+
+    h3 {
+      margin: 30px 0 25px 0;
+      position: relative;
+      scroll-margin-top: 25px;
+    }
+
+    h2::before {
+      content: &#x27;&#x27;;
+      position: absolute;
+      bottom:-2px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background: rgb(0, 28, 155);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    pre {
+      margin: 36px 0 35px;
+      background-color: rgb(35, 36, 31);
+      color: rgb(248, 248, 242); 
+      white-space: pre-wrap;
+      padding: 5px 10px;
+    }
+
+    pre:first-child { margin-top: 0; }
+  
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 14px 0 30px;
+    }
+
+    img:last-child { margin-bottom: 0 }
+
+    footer {
+      position: relative;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+      margin: auto 0 0 0;
+      font-size: 12px;
+      font-weight: 400;
+      padding-bottom: 12px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&#x60;;
+
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'QuillService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

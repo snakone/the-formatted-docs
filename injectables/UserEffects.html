@@ -1,0 +1,1209 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>formatted-blog documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">formatted-blog documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >UserEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/ngrx/users/users.effects.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#alertsUser1Effect$" >alertsUser1Effect$</a>
+                            </li>
+                            <li>
+                                <a href="#alertsUserEffect$" >alertsUserEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#getFavoritesOnLoginEffect$" >getFavoritesOnLoginEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#getFriendsOnLoginEffect$" >getFriendsOnLoginEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#loginUserEffect$" >loginUserEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#logOutEffect$" >logOutEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#refreshTokenEffect$" >refreshTokenEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#registerUserEffect$" >registerUserEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#saveFriendsEffect$" >saveFriendsEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#updateUserEffect$" >updateUserEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#userUpdateActivitiesEffect$" >userUpdateActivitiesEffect$</a>
+                            </li>
+                            <li>
+                                <a href="#verifyTokenEffect$" >verifyTokenEffect$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#navigate" >navigate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#resetUser" >resetUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(actions: Actions, loginSrv: <a href="../injectables/LoginService.html" target="_self">LoginService</a>, userSrv: <a href="../injectables/UserService.html" target="_self">UserService</a>, ls: <a href="../injectables/StorageService.html" target="_self">StorageService</a>, router: Router, crafter: <a href="../injectables/CrafterService.html" target="_self">CrafterService</a>, sw: <a href="../injectables/PWAService.html" target="_self">PWAService</a>, favService: <a href="../injectables/FavoriteService.html" target="_self">FavoriteService</a>, store: Store<UserState>, friendsSrv: <a href="../injectables/FriendsService.html" target="_self">FriendsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>actions</td>
+                                                  
+                                                        <td>
+                                                                    <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loginSrv</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoginService.html" target="_self" >LoginService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userSrv</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ls</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StorageService.html" target="_self" >StorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>crafter</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CrafterService.html" target="_self" >CrafterService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sw</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PWAService.html" target="_self" >PWAService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>favService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FavoriteService.html" target="_self" >FavoriteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store&lt;UserState&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>friendsSrv</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FriendsService.html" target="_self" >FriendsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigate"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>navigate</b></span>
+                        <a href="#navigate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>navigate(path: string | null, sentence: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="194"
+                                    class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>path</td>
+                                            <td>
+                                                        <code>string | null</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>sentence</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetUser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>resetUser</b></span>
+                        <a href="#resetUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetUser()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="202"
+                                    class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:202</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertsUser1Effect$"></a>
+                    <span class="name">
+                        <span ><b>alertsUser1Effect$</b></span>
+                        <a href="#alertsUser1Effect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.removeFriend),
+      concatMap((_) &#x3D;&gt; of(this.crafter.setSnack(&#x27;Amigo eliminado!&#x27;,  SnackTypeEnum.INFO)))
+    ), { dispatch: false }
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="187" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:187</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertsUserEffect$"></a>
+                    <span class="name">
+                        <span ><b>alertsUserEffect$</b></span>
+                        <a href="#alertsUserEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.addFriend),
+      concatMap((_) &#x3D;&gt; of(this.crafter.setSnack(&#x27;Amigo añadido!&#x27;,  SnackTypeEnum.SUCCESS)))
+    ), { dispatch: false }
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFavoritesOnLoginEffect$"></a>
+                    <span class="name">
+                        <span ><b>getFavoritesOnLoginEffect$</b></span>
+                        <a href="#getFavoritesOnLoginEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.loginSuccess),
+      concatMap(_ &#x3D;&gt; 
+        this.favService.getFavoritesByUser()
+         .pipe(
+            map((favorites: string[]) &#x3D;&gt; PostsActions.setFavorite({favorites})),
+            catchError(error &#x3D;&gt;
+              of(PostsActions.getFavoritesFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFriendsOnLoginEffect$"></a>
+                    <span class="name">
+                        <span ><b>getFriendsOnLoginEffect$</b></span>
+                        <a href="#getFriendsOnLoginEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.loginSuccess),
+      concatMap(_ &#x3D;&gt; 
+        this.friendsSrv.getFriendsByUser()
+         .pipe(
+            map((friends: User[]) &#x3D;&gt; UserActions.setFriends({friends})),
+            catchError(error &#x3D;&gt;
+              of(UserActions.getFriendsFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="149" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginUserEffect$"></a>
+                    <span class="name">
+                        <span ><b>loginUserEffect$</b></span>
+                        <a href="#loginUserEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.login),
+      concatMap((action) &#x3D;&gt;
+      this.loginSrv.signIn(action.name, action.password)
+        .pipe(
+          tap(_ &#x3D;&gt; this.navigate(null, LOGIN_SENTENCE)),
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOutEffect$"></a>
+                    <span class="name">
+                        <span ><b>logOutEffect$</b></span>
+                        <a href="#logOutEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.userLogOut),
+      tap(_ &#x3D;&gt; this.resetUser()),
+      switchMap(_ &#x3D;&gt; [
+        DraftActions.reset(null),
+        DraftActions.resetActive(),
+        PostsActions.resetByUser(),
+        PostsActions.resetFavorite()
+      ])
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshTokenEffect$"></a>
+                    <span class="name">
+                        <span ><b>refreshTokenEffect$</b></span>
+                        <a href="#refreshTokenEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.refreshToken),
+      concatMap((action) &#x3D;&gt;
+      this.userSrv.refreshToken(action.id)
+        .pipe(
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerUserEffect$"></a>
+                    <span class="name">
+                        <span ><b>registerUserEffect$</b></span>
+                        <a href="#registerUserEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.register),
+      concatMap((action) &#x3D;&gt;
+      this.loginSrv.signUp(action.user)
+        .pipe(
+          tap(_ &#x3D;&gt; this.navigate(PROFILE_ROUTE, REGISTER_SENTENCE)),
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveFriendsEffect$"></a>
+                    <span class="name">
+                        <span ><b>saveFriendsEffect$</b></span>
+                        <a href="#saveFriendsEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(...[
+        UserActions.addFriend,
+        UserActions.removeFriend,
+      ]),
+      debounceTime(1000),
+      withLatestFrom(this.store.select(fromUsers.getFriends)),
+      concatMap(([_, users]) &#x3D;&gt;
+      this.friendsSrv.addFriends(users.map(u &#x3D;&gt; u._id))
+        .pipe(
+          catchError(error &#x3D;&gt;
+              of(UserActions.getFriendsFailure({ error: error.message }))
+    )))), {dispatch: false}
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="162" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:162</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserEffect$"></a>
+                    <span class="name">
+                        <span ><b>updateUserEffect$</b></span>
+                        <a href="#updateUserEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.update),
+      concatMap((action) &#x3D;&gt;
+      this.userSrv.update(action.user)
+        .pipe(
+          tap(_ &#x3D;&gt; this.navigate(null, UPDATED_SENTENCE)),
+          map(user &#x3D;&gt; UserActions.updateSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.updateFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userUpdateActivitiesEffect$"></a>
+                    <span class="name">
+                        <span ><b>userUpdateActivitiesEffect$</b></span>
+                        <a href="#userUpdateActivitiesEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.updateSuccess),
+      concatMap(_ &#x3D;&gt; of(ActivitiesActions.get()))
+    )
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyTokenEffect$"></a>
+                    <span class="name">
+                        <span ><b>verifyTokenEffect$</b></span>
+                        <a href="#verifyTokenEffect$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.verifyToken),
+      concatMap(() &#x3D;&gt;
+      this.userSrv.verifyToken()
+        .pipe(
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/core/ngrx/users/users.effects.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { Actions, ofType, createEffect } from &#x27;@ngrx/effects&#x27;;
+import { map, concatMap, catchError, tap, switchMap, debounceTime, withLatestFrom } from &#x27;rxjs/operators&#x27;;
+
+import { LoginService } from &#x27;@services/api/login.service&#x27;;
+import { UserService } from &#x27;@services/api/users.service&#x27;;
+import { StorageService } from &#x27;@services/storage/storage.service&#x27;;
+import { PWAService } from &#x27;@core/services/pwa/pwa.service&#x27;;
+import { CrafterService } from &#x27;@core/services/crafter/crafter.service&#x27;;
+import { FavoriteService } from &#x27;@core/services/api/favorite.service&#x27;;
+
+import * as UserActions from &#x27;./users.actions&#x27;;
+import * as DraftActions from &#x27;../drafts/drafts.actions&#x27;;
+import * as PostsActions from &#x27;../posts/posts.actions&#x27;;
+import * as ActivitiesActions from &#x27;../activities/activities.actions&#x27;;
+import * as fromUsers from &#x27;./users.selectors&#x27;;
+
+import { LOGIN_SENTENCE, LOGOUT_SENTENCE, REGISTER_SENTENCE, UPDATED_SENTENCE } from &#x27;@shared/data/sentences&#x27;;
+import { UserState } from &#x27;./users.reducer&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { FriendsService } from &#x27;@core/services/api/friends.service&#x27;;
+import { PROFILE_ROUTE, TOKEN_KEY } from &#x27;@shared/data/constants&#x27;;
+import { User } from &#x27;@shared/types/interface.user&#x27;;
+import { SnackTypeEnum } from &#x27;@shared/types/types.enums&#x27;;
+
+@Injectable()
+
+export class UserEffects {
+
+  constructor(
+    private actions: Actions,
+    private loginSrv: LoginService,
+    private userSrv: UserService,
+    private ls: StorageService,
+    private router: Router,
+    private crafter: CrafterService,
+    private sw: PWAService,
+    private favService: FavoriteService,
+    private store: Store&lt;UserState&gt;,
+    private friendsSrv: FriendsService
+  ) { }
+
+  // LOGIN USER
+  loginUserEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.login),
+      concatMap((action) &#x3D;&gt;
+      this.loginSrv.signIn(action.name, action.password)
+        .pipe(
+          tap(_ &#x3D;&gt; this.navigate(null, LOGIN_SENTENCE)),
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  );
+
+  // REGISTER USER
+  registerUserEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.register),
+      concatMap((action) &#x3D;&gt;
+      this.loginSrv.signUp(action.user)
+        .pipe(
+          tap(_ &#x3D;&gt; this.navigate(PROFILE_ROUTE, REGISTER_SENTENCE)),
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  );
+
+  // VERIFY TOKEN
+  verifyTokenEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.verifyToken),
+      concatMap(() &#x3D;&gt;
+      this.userSrv.verifyToken()
+        .pipe(
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  );
+
+  // REFRESH TOKEN
+  refreshTokenEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.refreshToken),
+      concatMap((action) &#x3D;&gt;
+      this.userSrv.refreshToken(action.id)
+        .pipe(
+          map(user &#x3D;&gt; UserActions.loginSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.loginFailure({ error: error.message }))
+    ))))
+  );
+
+  // UPDATE
+  updateUserEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.update),
+      concatMap((action) &#x3D;&gt;
+      this.userSrv.update(action.user)
+        .pipe(
+          tap(_ &#x3D;&gt; this.navigate(null, UPDATED_SENTENCE)),
+          map(user &#x3D;&gt; UserActions.updateSuccess({ user })),
+          catchError(error &#x3D;&gt;
+              of(UserActions.updateFailure({ error: error.message }))
+    ))))
+  );
+
+  // USER LOGOUT
+  logOutEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.userLogOut),
+      tap(_ &#x3D;&gt; this.resetUser()),
+      switchMap(_ &#x3D;&gt; [
+        DraftActions.reset(null),
+        DraftActions.resetActive(),
+        PostsActions.resetByUser(),
+        PostsActions.resetFavorite()
+      ])
+    )
+  );
+
+  // USER UPDATE ACTIVITIES
+  userUpdateActivitiesEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.updateSuccess),
+      concatMap(_ &#x3D;&gt; of(ActivitiesActions.get()))
+    )
+  );
+
+  // GET FAVORITES ON LOGIN
+  getFavoritesOnLoginEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.loginSuccess),
+      concatMap(_ &#x3D;&gt; 
+        this.favService.getFavoritesByUser()
+         .pipe(
+            map((favorites: string[]) &#x3D;&gt; PostsActions.setFavorite({favorites})),
+            catchError(error &#x3D;&gt;
+              of(PostsActions.getFavoritesFailure({ error: error.message }))
+    ))))
+  );
+
+  // GET FRIENDS ON LOGIN
+  getFriendsOnLoginEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.loginSuccess),
+      concatMap(_ &#x3D;&gt; 
+        this.friendsSrv.getFriendsByUser()
+         .pipe(
+            map((friends: User[]) &#x3D;&gt; UserActions.setFriends({friends})),
+            catchError(error &#x3D;&gt;
+              of(UserActions.getFriendsFailure({ error: error.message }))
+    ))))
+  );
+
+  // FRIENDS
+  saveFriendsEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(...[
+        UserActions.addFriend,
+        UserActions.removeFriend,
+      ]),
+      debounceTime(1000),
+      withLatestFrom(this.store.select(fromUsers.getFriends)),
+      concatMap(([_, users]) &#x3D;&gt;
+      this.friendsSrv.addFriends(users.map(u &#x3D;&gt; u._id))
+        .pipe(
+          catchError(error &#x3D;&gt;
+              of(UserActions.getFriendsFailure({ error: error.message }))
+    )))), {dispatch: false}
+  );
+
+  // ALERT USER
+  alertsUserEffect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.addFriend),
+      concatMap((_) &#x3D;&gt; of(this.crafter.setSnack(&#x27;Amigo añadido!&#x27;,  SnackTypeEnum.SUCCESS)))
+    ), { dispatch: false }
+  )
+
+    // ALERT USER
+  alertsUser1Effect$ &#x3D; createEffect(() &#x3D;&gt; this.actions
+    .pipe(
+      ofType(UserActions.removeFriend),
+      concatMap((_) &#x3D;&gt; of(this.crafter.setSnack(&#x27;Amigo eliminado!&#x27;,  SnackTypeEnum.INFO)))
+    ), { dispatch: false }
+  )
+
+  private async navigate(
+    path: string | null, 
+    sentence: string
+  ): Promise&lt;void&gt; {
+    if (path) this.router.navigateByUrl(path);
+    this.crafter.setSnack(sentence,  SnackTypeEnum.INFO);
+  }
+
+  private resetUser(): void {
+    this.ls.setKey(TOKEN_KEY, null);
+    this.userSrv.setUser(null);
+    this.navigate(&#x27;/&#x27;, LOGOUT_SENTENCE)
+  }
+
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserEffects.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
